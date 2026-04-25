@@ -6,7 +6,7 @@ class MediaBottomSheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final height =
-        MediaQuery.of(context).size.height * 0.2; //2 0% of the screen height
+        MediaQuery.of(context).size.height * 0.2; //20% of the screen height
 
     return Container(
       height: height,
