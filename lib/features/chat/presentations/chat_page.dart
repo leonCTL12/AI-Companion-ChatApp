@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:llm_chatbot/features/chat/presentations/widgets/chat_area.dart';
 import 'package:llm_chatbot/features/chat/presentations/widgets/chat_input_field.dart';
 
 import 'widgets/app_bar.dart';
@@ -12,7 +13,7 @@ class ChatPage extends StatelessWidget {
       appBar: ChatAppBar(),
       body: Column(
         children: [
-          Expanded(child: Placeholder()),
+          Expanded(child: ChatArea(messages: [])),
           ChatInputField(),
         ],
       ),
