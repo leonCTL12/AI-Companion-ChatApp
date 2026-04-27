@@ -16,7 +16,7 @@ class ChatPage extends StatelessWidget {
       Message.user("K"),
 
       // 2. Multi-line AI support
-      Message.ai("I'm here for you.\n\nLet's take a deep breath together."),
+      Message.ai("I'm here for you.\n\n Let's take a deep breath together."),
 
       // 3. The "Wall of Text" (Test wrapping and max-width)
       Message.user(
@@ -42,6 +42,7 @@ class ChatPage extends StatelessWidget {
 
       // 8. Trailing whitespace and special chars
       Message.user("How does it look?     \n(Checking spacing)     "),
+      Message.ai(";)"),
     ];
     return Scaffold(
       appBar: ChatAppBar(),
