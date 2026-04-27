@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:llm_chatbot/features/chat/domain/message.dart';
 
 class AiChatMessageBubble extends StatelessWidget {
-  final String message;
+  final Message message;
 
   const AiChatMessageBubble({super.key, required this.message});
 
@@ -27,7 +28,7 @@ class AiChatMessageBubble extends StatelessWidget {
           ),
         ),
         child: Text(
-          message,
+          message.content,
           style: theme.textTheme.bodyLarge?.copyWith(
             color: colorScheme.onSecondaryContainer,
           ),

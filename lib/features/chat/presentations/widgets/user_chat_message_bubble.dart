@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
+import '../../domain/message.dart';
+
 class UserChatMessageBubble extends StatelessWidget {
-  final String message;
+  final Message message;
 
   const UserChatMessageBubble({super.key, required this.message});
 
@@ -22,7 +24,7 @@ class UserChatMessageBubble extends StatelessWidget {
           borderRadius: BorderRadius.circular(20),
         ),
         child: Text(
-          message,
+          message.content,
           style: theme.textTheme.bodyLarge?.copyWith(
             color: colorScheme.onSurfaceVariant,
           ),
