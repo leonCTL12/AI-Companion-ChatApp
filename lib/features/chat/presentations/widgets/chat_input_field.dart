@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:llm_chatbot/features/chat/providers/chat_provider.dart';
 
 import 'media_bottom_sheet.dart';
 
-class ChatInputField extends StatelessWidget {
+class ChatInputField extends ConsumerWidget {
   const ChatInputField({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final controller = TextEditingController();
+
     return SafeArea(
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
@@ -26,11 +30,23 @@ class ChatInputField extends StatelessWidget {
             ),
             Expanded(
               child: TextField(
+                controller: controller,
                 decoration: const InputDecoration(
                   hintText: "What's on your mind?",
                   border: InputBorder.none,
                 ),
               ),
+            ),
+            IconButton(
+              onPressed: () {
+                if (controller.text.trim().isNotEmpty) {
+                  ref
+                      .read(chatProvider.notifier)
+                      .addUserMessage(controller.text);
+                  controller.clear();
+                }
+              },
+              icon: Icon(Icons.send),
             ),
           ],
         ),
