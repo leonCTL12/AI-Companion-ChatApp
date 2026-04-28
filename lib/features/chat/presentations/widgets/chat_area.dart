@@ -12,10 +12,12 @@ class ChatArea extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final messages = ref.watch(chatProvider);
     return ListView.builder(
+      reverse: true,
+      //The reason I have to do this is because I want it to scroll to bottom when new message is added
       padding: const EdgeInsets.symmetric(vertical: 20),
       itemCount: messages.length,
       itemBuilder: (context, index) {
-        var message = messages[index];
+        final message = messages[messages.length - 1 - index]; //reverse access
         if (message.fromUser) {
           return UserChatMessageBubble(message: message);
         } else {
