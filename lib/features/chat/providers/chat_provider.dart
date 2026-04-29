@@ -21,7 +21,8 @@ class ChatNotifier extends _$ChatNotifier {
     state = AsyncData(updatedListWithUser);
 
     //Loading but keep showing the old data!
-    state = const AsyncLoading<List<Message>>().copyWithPrevious(state);
+    //Riverpod will keep the previous data even if you switch from async data to async loading
+    state = const AsyncLoading<List<Message>>();
 
     try {
       final chatRepository = ref.read(chatRepositoryProvider);
@@ -31,10 +32,7 @@ class ChatNotifier extends _$ChatNotifier {
 
       state = AsyncData([...updatedListWithUser, response]);
     } catch (e, stack) {
-      state = AsyncError<List<Message>>(
-        e,
-        stack,
-      ).copyWithPrevious(AsyncData(updatedListWithUser));
+      state = AsyncError<List<Message>>(e, stack);
     }
   }
 }
