@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:llm_chatbot/features/chat/presentations/widgets/base_chat_message_bubble.dart';
 
-import '../../domain/message.dart';
+import '../../domain/models/message.dart';
 
 class UserChatMessageBubble extends StatelessWidget {
   final Message message;

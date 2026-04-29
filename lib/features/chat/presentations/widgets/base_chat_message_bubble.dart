@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:intl/intl.dart';
 
-import '../../domain/message.dart';
+import '../../domain/models/message.dart';
 
 class BaseChatMessageBubble extends StatelessWidget {
   final Message message;
