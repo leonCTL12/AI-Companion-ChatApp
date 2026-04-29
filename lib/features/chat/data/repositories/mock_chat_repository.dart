@@ -5,7 +5,6 @@ class MockChatRepository implements IChatRepository {
   @override
   Future<Message> getChatResponse(List<Message> history) async {
     await Future.delayed(const Duration(seconds: 3));
-    throw Error();
     return Message.ai("Thanks for asking! This s a mock response!");
   }
 }

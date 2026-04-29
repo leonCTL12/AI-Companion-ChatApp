@@ -49,7 +49,12 @@ class ChatArea extends ConsumerWidget {
             },
           ),
         ),
-        if (isLoading) const CupertinoActivityIndicator(),
+
+        if (isLoading)
+          Align(
+            alignment: Alignment.centerLeft,
+            child: AiChatMessageBubble(message: Message.ai("Typing...")),
+          ),
         if (errorMessage != null)
           Padding(
             padding: const EdgeInsets.all(8.0),
