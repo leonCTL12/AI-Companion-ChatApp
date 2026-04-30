@@ -1,10 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:llm_chatbot/features/chat/presentations/widgets/ai_chat_message_bubble.dart';
-import 'package:llm_chatbot/features/chat/presentations/widgets/user_chat_message_bubble.dart';
+import 'package:llm_chatbot/features/chat/presentation/widgets/ai_chat_message_bubble.dart';
+import 'package:llm_chatbot/features/chat/presentation/widgets/user_chat_message_bubble.dart';
 
+import '../../application/chat_provider.dart';
 import '../../domain/models/message.dart';
-import '../../providers/chat_provider.dart';
 
 class ChatArea extends ConsumerWidget {
   const ChatArea({super.key});

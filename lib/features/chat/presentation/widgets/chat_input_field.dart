@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:llm_chatbot/features/chat/providers/chat_provider.dart';
 
+import '../../application/chat_provider.dart';
 import 'media_bottom_sheet.dart';
 
 class ChatInputField extends ConsumerWidget {

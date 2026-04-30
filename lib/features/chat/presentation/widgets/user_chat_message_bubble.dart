@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:llm_chatbot/features/chat/presentations/widgets/base_chat_message_bubble.dart';
+import 'package:llm_chatbot/features/chat/presentation/widgets/base_chat_message_bubble.dart';
 
 import '../../domain/models/message.dart';
 

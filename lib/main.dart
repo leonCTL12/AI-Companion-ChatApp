@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:llm_chatbot/core/theme/app_theme.dart';
-import 'package:llm_chatbot/features/chat/presentations/chat_page.dart';
+import 'package:llm_chatbot/features/chat/presentation/chat_page.dart';
 
 void main() {
   runApp(ProviderScope(child: const MyApp()));
