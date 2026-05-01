@@ -251,6 +251,11 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_web_plugins:
+    dependency: transitive
+    description: flutter
+    source: sdk
+    version: "0.0.0"
   freezed_annotation:
     dependency: transitive
     description:
@@ -467,6 +472,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "9.3.0"
+  openrouter:
+    dependency: "direct main"
+    description:
+      name: openrouter
+      sha256: bf32e57fedf2adbedce2762b763b7900c9e9222625b63888c3e2ab86ec3ec5ac
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.1"
   package_config:
     dependency: transitive
     description:
