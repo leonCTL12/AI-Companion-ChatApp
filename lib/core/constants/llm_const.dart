@@ -1,3 +1,5 @@
+import 'package:flutter_dotenv/flutter_dotenv.dart';
+
 class LlmConst {
   static const String systemPrompt = """
   ### ROLE
@@ -26,6 +28,5 @@ Echo: "Oh, those floppy ears! What a beautiful pup. Having that kind of energy a
   static const String model =
       "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free";
 
-  //TODO: remove this
-  static const String apiKey = "";
+  static String get apiKey => dotenv.env['OPEN_ROUTER_KEY'] ?? '';
 }
