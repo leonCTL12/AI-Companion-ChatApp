@@ -108,7 +108,7 @@ export const getChatResponse = onCall({secrets: ["OPENROUTER_API_KEY"]}, async (
             return {
                 message: aiContent,
                 status: "success",
-            }
+            };
         } else {
             throw new HttpsError("internal", "Empty response from OpenRouter.");
         }
