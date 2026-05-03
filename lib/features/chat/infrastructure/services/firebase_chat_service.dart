@@ -7,7 +7,11 @@ class FirebaseChatService {
   final _functions = FirebaseFunctions.instanceFor(region: 'asia-east2');
 
   FirebaseChatService() {
-    if (kDebugMode) {
+    const bool useEmulator = bool.fromEnvironment(
+      'USE_EMULATOR',
+      defaultValue: false,
+    );
+    if (useEmulator) {
       try {
         final host = 'localhost';
         _functions.useFunctionsEmulator(host, 5001);
