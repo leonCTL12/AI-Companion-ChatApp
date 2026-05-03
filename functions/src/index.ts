@@ -9,7 +9,6 @@
 
 import {setGlobalOptions} from "firebase-functions/v2";
 import {HttpsError, onCall} from "firebase-functions/v2/https";
-import * as logger from "firebase-functions/logger";
 import axios from "axios";
 
 // Start writing functions
@@ -30,17 +29,6 @@ setGlobalOptions({
     memory: "256MiB", // Small and cheap for a demo
     maxInstances: 10,
 });
-export const helloWorld = onCall((request) => {
-    logger.info("Hello world was called!", {structuredData: true});
-
-    const name = request.data.name || "Stranger";
-
-    return {
-        message: `Hello ${name} from the Firebase Cloud! Local`,
-        status: "success",
-    };
-});
-
 
 const SYSTEM_PROMPT = `
 ### ROLE
