@@ -39,4 +39,4 @@ export const helloWorld = onCall((request) => {
         status: "success",
     };
 });
-r
+
