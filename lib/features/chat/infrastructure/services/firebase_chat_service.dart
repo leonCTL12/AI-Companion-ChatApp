@@ -20,9 +20,13 @@ class FirebaseChatService {
 
   Future<String> getChatResponse(List<domain.Message> history) async {
     try {
-      final callable = _functions.httpsCallable('helloWorld');
+      final callable = _functions.httpsCallable('getChatResponse');
 
-      final result = await callable.call({'name': "Leon"});
+      final result = await callable.call({
+        'history': history
+            .map((m) => {'content': m.content, 'fromUser': m.fromUser})
+            .toList(),
+      });
 
       return result.data['message'] as String;
     } on FirebaseFunctionsException catch (e) {
