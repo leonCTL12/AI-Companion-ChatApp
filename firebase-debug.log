@@ -1,0 +1,473 @@
+[debug] [2026-05-03T03:31:39.129Z] ----------------------------------------------------------------------
+[debug] [2026-05-03T03:31:39.131Z] Command:       /Users/leonchan/.nvm/versions/node/v20.19.5/bin/node /Users/leonchan/.nvm/versions/node/v20.19.5/bin/firebase emulators:start
+[debug] [2026-05-03T03:31:39.131Z] CLI Version:   14.15.2
+[debug] [2026-05-03T03:31:39.131Z] Platform:      darwin
+[debug] [2026-05-03T03:31:39.131Z] Node Version:  v20.19.5
+[debug] [2026-05-03T03:31:39.131Z] Time:          Sun May 03 2026 11:31:39 GMT+0800 (Hong Kong Standard Time)
+[debug] [2026-05-03T03:31:39.131Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-05-03T03:31:39.242Z] Object "" in "firebase.json" has unknown property: {"additionalProperty":"flutter"}
+[debug] [2026-05-03T03:31:39.244Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-05-03T03:31:39.244Z] > authorizing via signed-in user (leonchantinglok@gmail.com)
+[info] i  emulators: Starting emulators: functions, extensions {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: functions, extensions"}}
+[debug] [2026-05-03T03:31:39.248Z] Checked if tokens are valid: true, expires at: 1777782637269
+[debug] [2026-05-03T03:31:39.248Z] Checked if tokens are valid: true, expires at: 1777782637269
+[debug] [2026-05-03T03:31:39.248Z] >>> [apiv2][query] GET https://cloudresourcemanager.googleapis.com/v1/projects/llmbuddy-34bb9 [none]
+[debug] [2026-05-03T03:31:40.195Z] <<< [apiv2][status] GET https://cloudresourcemanager.googleapis.com/v1/projects/llmbuddy-34bb9 200
+[debug] [2026-05-03T03:31:40.195Z] <<< [apiv2][body] GET https://cloudresourcemanager.googleapis.com/v1/projects/llmbuddy-34bb9 {"projectNumber":"771806524801","projectId":"llmbuddy-34bb9","lifecycleState":"ACTIVE","name":"LlmBuddy","labels":{"firebase":"enabled","firebase-core":"disabled"},"createTime":"2026-05-02T03:26:18.783Z"}
+[debug] [2026-05-03T03:31:40.583Z] [logging] Logging Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2026-05-03T03:31:40.583Z] assigned listening specs for emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}]},"metadata":{"message":"assigned listening specs for emulators"}}
+[debug] [2026-05-03T03:31:40.586Z] [hub] writing locator at /var/folders/9m/zqylzxwx66dfn_m5fyzjl93w0000gn/T/hub-llmbuddy-34bb9.json
+[debug] [2026-05-03T03:31:40.588Z] [Extensions] Started Extensions emulator, this is a noop.
+[debug] [2026-05-03T03:31:40.918Z] [functions] Functions Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2026-05-03T03:31:40.918Z] [eventarc] Eventarc Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2026-05-03T03:31:40.918Z] [tasks] Cloud Tasks Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2026-05-03T03:31:40.918Z] late-assigned ports for functions and eventarc emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"functions":[{"address":"127.0.0.1","family":"IPv4","port":5001}],"eventarc":[{"address":"127.0.0.1","family":"IPv4","port":9299}],"tasks":[{"address":"127.0.0.1","family":"IPv4","port":9499}]},"metadata":{"message":"late-assigned ports for functions and eventarc emulators"}}
+[warn] ⚠  functions: The following emulators are not running, calls to these services from the Functions emulator will affect production: apphosting, auth, firestore, database, hosting, pubsub, storage, dataconnect {"metadata":{"emulator":{"name":"functions"},"message":"The following emulators are not running, calls to these services from the Functions emulator will affect production: \u001b[1mapphosting, auth, firestore, database, hosting, pubsub, storage, dataconnect\u001b[22m"}}
+[debug] [2026-05-03T03:31:40.929Z] defaultcredentials: writing to file /Users/leonchan/.config/firebase/leonchantinglok_gmail_com_application_default_credentials.json
+[debug] [2026-05-03T03:31:40.929Z] Setting GAC to /Users/leonchan/.config/firebase/leonchantinglok_gmail_com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to /Users/leonchan/.config/firebase/leonchantinglok_gmail_com_application_default_credentials.json"}}
+[debug] [2026-05-03T03:31:40.929Z] Checked if tokens are valid: true, expires at: 1777782637269
+[debug] [2026-05-03T03:31:40.929Z] Checked if tokens are valid: true, expires at: 1777782637269
+[debug] [2026-05-03T03:31:40.929Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/llmbuddy-34bb9/adminSdkConfig [none]
+[debug] [2026-05-03T03:31:41.269Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/llmbuddy-34bb9/adminSdkConfig 200
+[debug] [2026-05-03T03:31:41.269Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/llmbuddy-34bb9/adminSdkConfig {"projectId":"llmbuddy-34bb9","storageBucket":"llmbuddy-34bb9.firebasestorage.app"}
+[info] i  ui: downloading ui-v1.15.0.zip... {"metadata":{"emulator":{"name":"ui"},"message":"downloading ui-v1.15.0.zip..."}}
+[debug] [2026-05-03T03:31:41.287Z] >>> [apiv2][query] GET https://storage.googleapis.com/firebase-preview-drop/emulator/ui-v1.15.0.zip 
+[debug] [2026-05-03T03:31:41.337Z] <<< [apiv2][status] GET https://storage.googleapis.com/firebase-preview-drop/emulator/ui-v1.15.0.zip 200
+[debug] [2026-05-03T03:31:41.337Z] <<< [apiv2][body] GET https://storage.googleapis.com/firebase-preview-drop/emulator/ui-v1.15.0.zip [stream]
+[debug] [2026-05-03T03:31:41.440Z] Data is 3538469
+[debug] [2026-05-03T03:31:41.440Z] [unzip] Entry: client/ (compressed_size=0 bytes, uncompressed_size=0 bytes)
+[debug] [2026-05-03T03:31:41.440Z] [unzip] Processing entry: client/
+[debug] [2026-05-03T03:31:41.440Z] [unzip] mkdir: /Users/leonchan/.cache/firebase/emulators/ui-v1.15.0/client/
+[debug] [2026-05-03T03:31:41.440Z] [unzip] Entry: client/favicon-16x16.png (compressed_size=293 bytes, uncompressed_size=293 bytes)
+[debug] [2026-05-03T03:31:41.440Z] [unzip] Processing entry: client/favicon-16x16.png
+[debug] [2026-05-03T03:31:41.440Z] [unzip] else mkdir: /Users/leonchan/.cache/firebase/emulators/ui-v1.15.0/client
+[debug] [2026-05-03T03:31:41.440Z] [unzip] Writing file: /Users/leonchan/.cache/firebase/emulators/ui-v1.15.0/client/favicon-16x16.png
+[debug] [2026-05-03T03:31:41.441Z] [unzip] Entry: client/safari-pinned-tab.svg (compressed_size=1433 bytes, uncompressed_size=2611 bytes)
+[debug] [2026-05-03T03:31:41.441Z] [unzip] Processing entry: client/safari-pinned-tab.svg
+[debug] [2026-05-03T03:31:41.441Z] [unzip] else mkdir: /Users/leonchan/.cache/firebase/emulators/ui-v1.15.0/client
+[debug] [2026-05-03T03:31:41.441Z] [unzip] deflating: /Users/leonchan/.cache/firebase/emulators/ui-v1.15.0/client/safari-pinned-tab.svg
+[debug] [2026-05-03T03:31:41.443Z] [unzip] Entry: client/favicon.ico (compressed_size=2933 bytes, uncompressed_size=13294 bytes)
+[debug] [2026-05-03T03:31:41.443Z] [unzip] Processing entry: client/favicon.ico
+[debug] [2026-05-03T03:31:41.443Z] [unzip] else mkdir: /Users/leonchan/.cache/firebase/emulators/ui-v1.15.0/client
+[debug] [2026-05-03T03:31:41.443Z] [unzip] deflating: /Users/leonchan/.cache/firebase/emulators/ui-v1.15.0/client/favicon.ico
+[debug] [2026-05-03T03:31:41.443Z] [unzip] Entry: client/index.html (compressed_size=1364 bytes, uncompressed_size=3071 bytes)
+[debug] [2026-05-03T03:31:41.443Z] [unzip] Processing entry: client/index.html
+[debug] [2026-05-03T03:31:41.443Z] [unzip] else mkdir: /Users/leonchan/.cache/firebase/emulators/ui-v1.15.0/client
+[debug] [2026-05-03T03:31:41.443Z] [unzip] deflating: /Users/leonchan/.cache/firebase/emulators/ui-v1.15.0/client/index.html
+[debug] [2026-05-03T03:31:41.444Z] [unzip] Entry: client/android-chrome-192x192.png (compressed_size=2684 bytes, uncompressed_size=2684 bytes)
+[debug] [2026-05-03T03:31:41.444Z] [unzip] Processing entry: client/android-chrome-192x192.png
+[debug] [2026-05-03T03:31:41.444Z] [unzip] else mkdir: /Users/leonchan/.cache/firebase/emulators/ui-v1.15.0/client
+[debug] [2026-05-03T03:31:41.444Z] [unzip] Writing file: /Users/leonchan/.cache/firebase/emulators/ui-v1.15.0/client/android-chrome-192x192.png
+[debug] [2026-05-03T03:31:41.444Z] [unzip] Entry: client/apple-touch-icon.png (compressed_size=2123 bytes, uncompressed_size=2152 bytes)
+[debug] [2026-05-03T03:31:41.444Z] [unzip] Processing entry: client/apple-touch-icon.png
+[debug] [2026-05-03T03:31:41.444Z] [unzip] else mkdir: /Users/leonchan/.cache/firebase/emulators/ui-v1.15.0/client
+[debug] [2026-05-03T03:31:41.444Z] [unzip] deflating: /Users/leonchan/.cache/firebase/emulators/ui-v1.15.0/client/apple-touch-icon.png
+[debug] [2026-05-03T03:31:41.445Z] [unzip] Entry: client/android-chrome-512x512.png (compressed_size=5369 bytes, uncompressed_size=5411 bytes)
+[debug] [2026-05-03T03:31:41.445Z] [unzip] Processing entry: client/android-chrome-512x512.png
+[debug] [2026-05-03T03:31:41.445Z] [unzip] else mkdir: /Users/leonchan/.cache/firebase/emulators/ui-v1.15.0/client
+[debug] [2026-05-03T03:31:41.445Z] [unzip] deflating: /Users/leonchan/.cache/firebase/emulators/ui-v1.15.0/client/android-chrome-512x512.png
+[debug] [2026-05-03T03:31:41.445Z] [unzip] Entry: client/manifest.json (compressed_size=245 bytes, uncompressed_size=551 bytes)
+[debug] [2026-05-03T03:31:41.445Z] [unzip] Processing entry: client/manifest.json
+[debug] [2026-05-03T03:31:41.445Z] [unzip] else mkdir: /Users/leonchan/.cache/firebase/emulators/ui-v1.15.0/client
+[debug] [2026-05-03T03:31:41.445Z] [unzip] deflating: /Users/leonchan/.cache/firebase/emulators/ui-v1.15.0/client/manifest.json
+[debug] [2026-05-03T03:31:41.446Z] [unzip] Entry: client/robots.txt (compressed_size=26 bytes, uncompressed_size=26 bytes)
+[debug] [2026-05-03T03:31:41.446Z] [unzip] Processing entry: client/robots.txt
+[debug] [2026-05-03T03:31:41.446Z] [unzip] else mkdir: /Users/leonchan/.cache/firebase/emulators/ui-v1.15.0/client
+[debug] [2026-05-03T03:31:41.446Z] [unzip] Writing file: /Users/leonchan/.cache/firebase/emulators/ui-v1.15.0/client/robots.txt
+[debug] [2026-05-03T03:31:41.446Z] [unzip] Entry: client/mstile-150x150.png (compressed_size=2034 bytes, uncompressed_size=2034 bytes)
+[debug] [2026-05-03T03:31:41.446Z] [unzip] Processing entry: client/mstile-150x150.png
+[debug] [2026-05-03T03:31:41.446Z] [unzip] else mkdir: /Users/leonchan/.cache/firebase/emulators/ui-v1.15.0/client
+[debug] [2026-05-03T03:31:41.446Z] [unzip] Writing file: /Users/leonchan/.cache/firebase/emulators/ui-v1.15.0/client/mstile-150x150.png
+[debug] [2026-05-03T03:31:41.446Z] [unzip] Entry: client/assets/ (compressed_size=0 bytes, uncompressed_size=0 bytes)
+[debug] [2026-05-03T03:31:41.446Z] [unzip] Processing entry: client/assets/
+[debug] [2026-05-03T03:31:41.446Z] [unzip] mkdir: /Users/leonchan/.cache/firebase/emulators/ui-v1.15.0/client/assets/
+[debug] [2026-05-03T03:31:41.446Z] [unzip] Entry: client/assets/index-BX-A56oj.js (compressed_size=582089 bytes, uncompressed_size=2092775 bytes)
+[debug] [2026-05-03T03:31:41.446Z] [unzip] Processing entry: client/assets/index-BX-A56oj.js
+[debug] [2026-05-03T03:31:41.446Z] [unzip] else mkdir: /Users/leonchan/.cache/firebase/emulators/ui-v1.15.0/client/assets
+[debug] [2026-05-03T03:31:41.446Z] [unzip] deflating: /Users/leonchan/.cache/firebase/emulators/ui-v1.15.0/client/assets/index-BX-A56oj.js
+[debug] [2026-05-03T03:31:41.453Z] [unzip] Entry: client/assets/index-CjB9C900.css (compressed_size=35979 bytes, uncompressed_size=298654 bytes)
+[debug] [2026-05-03T03:31:41.453Z] [unzip] Processing entry: client/assets/index-CjB9C900.css
+[debug] [2026-05-03T03:31:41.453Z] [unzip] else mkdir: /Users/leonchan/.cache/firebase/emulators/ui-v1.15.0/client/assets
+[debug] [2026-05-03T03:31:41.453Z] [unzip] deflating: /Users/leonchan/.cache/firebase/emulators/ui-v1.15.0/client/assets/index-CjB9C900.css
+[debug] [2026-05-03T03:31:41.454Z] [unzip] Entry: client/assets/index-BX-A56oj.js.map (compressed_size=2362482 bytes, uncompressed_size=10036679 bytes)
+[debug] [2026-05-03T03:31:41.454Z] [unzip] Processing entry: client/assets/index-BX-A56oj.js.map
+[debug] [2026-05-03T03:31:41.454Z] [unzip] else mkdir: /Users/leonchan/.cache/firebase/emulators/ui-v1.15.0/client/assets
+[debug] [2026-05-03T03:31:41.454Z] [unzip] deflating: /Users/leonchan/.cache/firebase/emulators/ui-v1.15.0/client/assets/index-BX-A56oj.js.map
+[debug] [2026-05-03T03:31:41.480Z] [unzip] Entry: client/assets/extensions/ (compressed_size=0 bytes, uncompressed_size=0 bytes)
+[debug] [2026-05-03T03:31:41.480Z] [unzip] Processing entry: client/assets/extensions/
+[debug] [2026-05-03T03:31:41.480Z] [unzip] mkdir: /Users/leonchan/.cache/firebase/emulators/ui-v1.15.0/client/assets/extensions/
+[debug] [2026-05-03T03:31:41.480Z] [unzip] Entry: client/assets/extensions/default-extension.png (compressed_size=1646 bytes, uncompressed_size=1657 bytes)
+[debug] [2026-05-03T03:31:41.480Z] [unzip] Processing entry: client/assets/extensions/default-extension.png
+[debug] [2026-05-03T03:31:41.480Z] [unzip] else mkdir: /Users/leonchan/.cache/firebase/emulators/ui-v1.15.0/client/assets/extensions
+[debug] [2026-05-03T03:31:41.480Z] [unzip] deflating: /Users/leonchan/.cache/firebase/emulators/ui-v1.15.0/client/assets/extensions/default-extension.png
+[debug] [2026-05-03T03:31:41.481Z] [unzip] Entry: client/assets/img/ (compressed_size=0 bytes, uncompressed_size=0 bytes)
+[debug] [2026-05-03T03:31:41.481Z] [unzip] Processing entry: client/assets/img/
+[debug] [2026-05-03T03:31:41.481Z] [unzip] mkdir: /Users/leonchan/.cache/firebase/emulators/ui-v1.15.0/client/assets/img/
+[debug] [2026-05-03T03:31:41.481Z] [unzip] Entry: client/assets/img/database.png (compressed_size=29449 bytes, uncompressed_size=29988 bytes)
+[debug] [2026-05-03T03:31:41.481Z] [unzip] Processing entry: client/assets/img/database.png
+[debug] [2026-05-03T03:31:41.481Z] [unzip] else mkdir: /Users/leonchan/.cache/firebase/emulators/ui-v1.15.0/client/assets/img
+[debug] [2026-05-03T03:31:41.481Z] [unzip] deflating: /Users/leonchan/.cache/firebase/emulators/ui-v1.15.0/client/assets/img/database.png
+[debug] [2026-05-03T03:31:41.482Z] [unzip] Entry: client/assets/provider-icons/ (compressed_size=0 bytes, uncompressed_size=0 bytes)
+[debug] [2026-05-03T03:31:41.482Z] [unzip] Processing entry: client/assets/provider-icons/
+[debug] [2026-05-03T03:31:41.482Z] [unzip] mkdir: /Users/leonchan/.cache/firebase/emulators/ui-v1.15.0/client/assets/provider-icons/
+[debug] [2026-05-03T03:31:41.482Z] [unzip] Entry: client/assets/provider-icons/auth_service_saml.svg (compressed_size=575 bytes, uncompressed_size=1226 bytes)
+[debug] [2026-05-03T03:31:41.482Z] [unzip] Processing entry: client/assets/provider-icons/auth_service_saml.svg
+[debug] [2026-05-03T03:31:41.482Z] [unzip] else mkdir: /Users/leonchan/.cache/firebase/emulators/ui-v1.15.0/client/assets/provider-icons
+[debug] [2026-05-03T03:31:41.482Z] [unzip] deflating: /Users/leonchan/.cache/firebase/emulators/ui-v1.15.0/client/assets/provider-icons/auth_service_saml.svg
+[debug] [2026-05-03T03:31:41.482Z] [unzip] Entry: client/assets/provider-icons/auth_service_phone.svg (compressed_size=261 bytes, uncompressed_size=414 bytes)
+[debug] [2026-05-03T03:31:41.483Z] [unzip] Processing entry: client/assets/provider-icons/auth_service_phone.svg
+[debug] [2026-05-03T03:31:41.483Z] [unzip] else mkdir: /Users/leonchan/.cache/firebase/emulators/ui-v1.15.0/client/assets/provider-icons
+[debug] [2026-05-03T03:31:41.483Z] [unzip] deflating: /Users/leonchan/.cache/firebase/emulators/ui-v1.15.0/client/assets/provider-icons/auth_service_phone.svg
+[debug] [2026-05-03T03:31:41.483Z] [unzip] Entry: client/assets/provider-icons/auth_service_facebook.svg (compressed_size=289 bytes, uncompressed_size=457 bytes)
+[debug] [2026-05-03T03:31:41.483Z] [unzip] Processing entry: client/assets/provider-icons/auth_service_facebook.svg
+[debug] [2026-05-03T03:31:41.483Z] [unzip] else mkdir: /Users/leonchan/.cache/firebase/emulators/ui-v1.15.0/client/assets/provider-icons
+[debug] [2026-05-03T03:31:41.483Z] [unzip] deflating: /Users/leonchan/.cache/firebase/emulators/ui-v1.15.0/client/assets/provider-icons/auth_service_facebook.svg
+[debug] [2026-05-03T03:31:41.483Z] [unzip] Entry: client/assets/provider-icons/auth_service_game_center.svg (compressed_size=991 bytes, uncompressed_size=3921 bytes)
+[debug] [2026-05-03T03:31:41.483Z] [unzip] Processing entry: client/assets/provider-icons/auth_service_game_center.svg
+[debug] [2026-05-03T03:31:41.483Z] [unzip] else mkdir: /Users/leonchan/.cache/firebase/emulators/ui-v1.15.0/client/assets/provider-icons
+[debug] [2026-05-03T03:31:41.483Z] [unzip] deflating: /Users/leonchan/.cache/firebase/emulators/ui-v1.15.0/client/assets/provider-icons/auth_service_game_center.svg
+[debug] [2026-05-03T03:31:41.484Z] [unzip] Entry: client/assets/provider-icons/auth_service_apple.svg (compressed_size=230 bytes, uncompressed_size=334 bytes)
+[debug] [2026-05-03T03:31:41.484Z] [unzip] Processing entry: client/assets/provider-icons/auth_service_apple.svg
+[debug] [2026-05-03T03:31:41.484Z] [unzip] else mkdir: /Users/leonchan/.cache/firebase/emulators/ui-v1.15.0/client/assets/provider-icons
+[debug] [2026-05-03T03:31:41.484Z] [unzip] deflating: /Users/leonchan/.cache/firebase/emulators/ui-v1.15.0/client/assets/provider-icons/auth_service_apple.svg
+[debug] [2026-05-03T03:31:41.484Z] [unzip] Entry: client/assets/provider-icons/auth_service_github.svg (compressed_size=466 bytes, uncompressed_size=838 bytes)
+[debug] [2026-05-03T03:31:41.484Z] [unzip] Processing entry: client/assets/provider-icons/auth_service_github.svg
+[debug] [2026-05-03T03:31:41.484Z] [unzip] else mkdir: /Users/leonchan/.cache/firebase/emulators/ui-v1.15.0/client/assets/provider-icons
+[debug] [2026-05-03T03:31:41.484Z] [unzip] deflating: /Users/leonchan/.cache/firebase/emulators/ui-v1.15.0/client/assets/provider-icons/auth_service_github.svg
+[debug] [2026-05-03T03:31:41.484Z] [unzip] Entry: client/assets/provider-icons/auth_service_mslive.svg (compressed_size=203 bytes, uncompressed_size=378 bytes)
+[debug] [2026-05-03T03:31:41.484Z] [unzip] Processing entry: client/assets/provider-icons/auth_service_mslive.svg
+[debug] [2026-05-03T03:31:41.484Z] [unzip] else mkdir: /Users/leonchan/.cache/firebase/emulators/ui-v1.15.0/client/assets/provider-icons
+[debug] [2026-05-03T03:31:41.484Z] [unzip] deflating: /Users/leonchan/.cache/firebase/emulators/ui-v1.15.0/client/assets/provider-icons/auth_service_mslive.svg
+[debug] [2026-05-03T03:31:41.484Z] [unzip] Entry: client/assets/provider-icons/auth_service_yahoo.svg (compressed_size=577 bytes, uncompressed_size=1182 bytes)
+[debug] [2026-05-03T03:31:41.484Z] [unzip] Processing entry: client/assets/provider-icons/auth_service_yahoo.svg
+[debug] [2026-05-03T03:31:41.484Z] [unzip] else mkdir: /Users/leonchan/.cache/firebase/emulators/ui-v1.15.0/client/assets/provider-icons
+[debug] [2026-05-03T03:31:41.485Z] [unzip] deflating: /Users/leonchan/.cache/firebase/emulators/ui-v1.15.0/client/assets/provider-icons/auth_service_yahoo.svg
+[debug] [2026-05-03T03:31:41.485Z] [unzip] Entry: client/assets/provider-icons/auth_service_twitter.svg (compressed_size=444 bytes, uncompressed_size=751 bytes)
+[debug] [2026-05-03T03:31:41.485Z] [unzip] Processing entry: client/assets/provider-icons/auth_service_twitter.svg
+[debug] [2026-05-03T03:31:41.485Z] [unzip] else mkdir: /Users/leonchan/.cache/firebase/emulators/ui-v1.15.0/client/assets/provider-icons
+[debug] [2026-05-03T03:31:41.485Z] [unzip] deflating: /Users/leonchan/.cache/firebase/emulators/ui-v1.15.0/client/assets/provider-icons/auth_service_twitter.svg
+[debug] [2026-05-03T03:31:41.485Z] [unzip] Entry: client/assets/provider-icons/auth_service_play_games.svg (compressed_size=565 bytes, uncompressed_size=1173 bytes)
+[debug] [2026-05-03T03:31:41.485Z] [unzip] Processing entry: client/assets/provider-icons/auth_service_play_games.svg
+[debug] [2026-05-03T03:31:41.485Z] [unzip] else mkdir: /Users/leonchan/.cache/firebase/emulators/ui-v1.15.0/client/assets/provider-icons
+[debug] [2026-05-03T03:31:41.485Z] [unzip] deflating: /Users/leonchan/.cache/firebase/emulators/ui-v1.15.0/client/assets/provider-icons/auth_service_play_games.svg
+[debug] [2026-05-03T03:31:41.485Z] [unzip] Entry: client/assets/provider-icons/auth_service_email.svg (compressed_size=228 bytes, uncompressed_size=326 bytes)
+[debug] [2026-05-03T03:31:41.485Z] [unzip] Processing entry: client/assets/provider-icons/auth_service_email.svg
+[debug] [2026-05-03T03:31:41.485Z] [unzip] else mkdir: /Users/leonchan/.cache/firebase/emulators/ui-v1.15.0/client/assets/provider-icons
+[debug] [2026-05-03T03:31:41.485Z] [unzip] deflating: /Users/leonchan/.cache/firebase/emulators/ui-v1.15.0/client/assets/provider-icons/auth_service_email.svg
+[debug] [2026-05-03T03:31:41.486Z] [unzip] Entry: client/assets/provider-icons/auth_service_google.svg (compressed_size=409 bytes, uncompressed_size=720 bytes)
+[debug] [2026-05-03T03:31:41.486Z] [unzip] Processing entry: client/assets/provider-icons/auth_service_google.svg
+[debug] [2026-05-03T03:31:41.486Z] [unzip] else mkdir: /Users/leonchan/.cache/firebase/emulators/ui-v1.15.0/client/assets/provider-icons
+[debug] [2026-05-03T03:31:41.486Z] [unzip] deflating: /Users/leonchan/.cache/firebase/emulators/ui-v1.15.0/client/assets/provider-icons/auth_service_google.svg
+[debug] [2026-05-03T03:31:41.486Z] [unzip] Entry: client/assets/provider-icons/auth_service_oidc.svg (compressed_size=414 bytes, uncompressed_size=858 bytes)
+[debug] [2026-05-03T03:31:41.486Z] [unzip] Processing entry: client/assets/provider-icons/auth_service_oidc.svg
+[debug] [2026-05-03T03:31:41.486Z] [unzip] else mkdir: /Users/leonchan/.cache/firebase/emulators/ui-v1.15.0/client/assets/provider-icons
+[debug] [2026-05-03T03:31:41.486Z] [unzip] deflating: /Users/leonchan/.cache/firebase/emulators/ui-v1.15.0/client/assets/provider-icons/auth_service_oidc.svg
+[debug] [2026-05-03T03:31:41.486Z] [unzip] Entry: client/browserconfig.xml (compressed_size=491 bytes, uncompressed_size=822 bytes)
+[debug] [2026-05-03T03:31:41.486Z] [unzip] Processing entry: client/browserconfig.xml
+[debug] [2026-05-03T03:31:41.486Z] [unzip] else mkdir: /Users/leonchan/.cache/firebase/emulators/ui-v1.15.0/client
+[debug] [2026-05-03T03:31:41.486Z] [unzip] deflating: /Users/leonchan/.cache/firebase/emulators/ui-v1.15.0/client/browserconfig.xml
+[debug] [2026-05-03T03:31:41.487Z] [unzip] Entry: client/favicon-32x32.png (compressed_size=475 bytes, uncompressed_size=475 bytes)
+[debug] [2026-05-03T03:31:41.487Z] [unzip] Processing entry: client/favicon-32x32.png
+[debug] [2026-05-03T03:31:41.487Z] [unzip] else mkdir: /Users/leonchan/.cache/firebase/emulators/ui-v1.15.0/client
+[debug] [2026-05-03T03:31:41.487Z] [unzip] Writing file: /Users/leonchan/.cache/firebase/emulators/ui-v1.15.0/client/favicon-32x32.png
+[debug] [2026-05-03T03:31:41.487Z] [unzip] Entry: server/ (compressed_size=0 bytes, uncompressed_size=0 bytes)
+[debug] [2026-05-03T03:31:41.487Z] [unzip] Processing entry: server/
+[debug] [2026-05-03T03:31:41.487Z] [unzip] mkdir: /Users/leonchan/.cache/firebase/emulators/ui-v1.15.0/server/
+[debug] [2026-05-03T03:31:41.487Z] [unzip] Entry: server/server.mjs.map (compressed_size=217845 bytes, uncompressed_size=944978 bytes)
+[debug] [2026-05-03T03:31:41.487Z] [unzip] Processing entry: server/server.mjs.map
+[debug] [2026-05-03T03:31:41.487Z] [unzip] else mkdir: /Users/leonchan/.cache/firebase/emulators/ui-v1.15.0/server
+[debug] [2026-05-03T03:31:41.487Z] [unzip] deflating: /Users/leonchan/.cache/firebase/emulators/ui-v1.15.0/server/server.mjs.map
+[debug] [2026-05-03T03:31:41.489Z] [unzip] Entry: server/server.mjs (compressed_size=276407 bytes, uncompressed_size=933701 bytes)
+[debug] [2026-05-03T03:31:41.489Z] [unzip] Processing entry: server/server.mjs
+[debug] [2026-05-03T03:31:41.489Z] [unzip] else mkdir: /Users/leonchan/.cache/firebase/emulators/ui-v1.15.0/server
+[debug] [2026-05-03T03:31:41.489Z] [unzip] deflating: /Users/leonchan/.cache/firebase/emulators/ui-v1.15.0/server/server.mjs
+[debug] [2026-05-03T03:31:41.494Z] [Extensions] Connecting Extensions emulator, this is a noop.
+[info] i  functions: Watching "/Users/leonchan/WorkSpace/Flutter-Full-Feature-App/functions" for Cloud Functions... {"metadata":{"emulator":{"name":"functions"},"message":"Watching \"/Users/leonchan/WorkSpace/Flutter-Full-Feature-App/functions\" for Cloud Functions..."}}
+[debug] [2026-05-03T03:31:41.497Z] Validating nodejs source
+[warn] ⚠  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[warn] ⚠  functions: Please note that there will be breaking changes when you upgrade. 
+[debug] [2026-05-03T03:31:41.891Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "lint": "eslint --ext .js,.ts .",
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "22"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "firebase-admin": "^12.6.0",
+    "firebase-functions": "^6.0.1"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.12.0",
+    "@typescript-eslint/parser": "^5.12.0",
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.25.4",
+    "firebase-functions-test": "^3.1.0",
+    "typescript": "^5.7.3"
+  },
+  "private": true
+}
+[debug] [2026-05-03T03:31:41.891Z] Building nodejs source
+[debug] [2026-05-03T03:31:41.892Z] Failed to find version of module node: reached end of search path /Users/leonchan/WorkSpace/Flutter-Full-Feature-App/functions/node_modules
+[warn] ⚠  functions: Your requested "node" version "22" doesn't match your global version "20". Using node@20 from host. 
+[debug] [2026-05-03T03:31:41.892Z] Could not find functions.yaml. Must use http discovery
+[debug] [2026-05-03T03:31:41.895Z] Found firebase-functions binary at '/Users/leonchan/WorkSpace/Flutter-Full-Feature-App/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8068
+
+[debug] [2026-05-03T03:31:42.148Z] Got response from /__/functions.yaml {"endpoints":{"helloWorld":{"availableMemoryMb":256,"timeoutSeconds":null,"minInstances":null,"maxInstances":10,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","region":["asia-east2"],"labels":{},"callableTrigger":{},"entryPoint":"helloWorld"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{}}
+[debug] [2026-05-03T03:31:46.163Z] defaultcredentials: writing to file /Users/leonchan/.config/firebase/leonchantinglok_gmail_com_application_default_credentials.json
+[debug] [2026-05-03T03:31:46.163Z] Setting GAC to /Users/leonchan/.config/firebase/leonchantinglok_gmail_com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to /Users/leonchan/.config/firebase/leonchantinglok_gmail_com_application_default_credentials.json"}}
+[info] ✔  functions: Loaded functions definitions from source: helloWorld. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: helloWorld."}}
+[info] ✔  functions[asia-east2-helloWorld]: http function initialized (http://127.0.0.1:5001/llmbuddy-34bb9/asia-east2/helloWorld). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://127.0.0.1:5001/llmbuddy-34bb9/asia-east2/helloWorld)."}}
+[debug] [2026-05-03T03:31:46.168Z] Could not find VSCode notification endpoint: FetchError: request to http://localhost:40001/vscode/notify failed, reason: . If you are not running the Firebase Data Connect VSCode extension, this is expected and not an issue.
+[info] 
+┌─────────────────────────────────────────────────────────────┐
+│ ✔  All emulators ready! It is now safe to connect your app. │
+│ i  View Emulator UI at http://127.0.0.1:4000/               │
+└─────────────────────────────────────────────────────────────┘
+
+┌────────────┬────────────────┬──────────────────────────────────┐
+│ Emulator   │ Host:Port      │ View in Emulator UI              │
+├────────────┼────────────────┼──────────────────────────────────┤
+│ Functions  │ 127.0.0.1:5001 │ http://127.0.0.1:4000/functions  │
+├────────────┼────────────────┼──────────────────────────────────┤
+│ Extensions │ 127.0.0.1:5001 │ http://127.0.0.1:4000/extensions │
+└────────────┴────────────────┴──────────────────────────────────┘
+  Emulator Hub host: 127.0.0.1 port: 4400
+  Other reserved ports: 4500
+┌─────────────────────────┬───────────────┬─────────────────────┐
+│ Extension Instance Name │ Extension Ref │ View in Emulator UI │
+└─────────────────────────┴───────────────┴─────────────────────┘
+Issues? Report them at https://github.com/firebase/firebase-tools/issues and attach the *-debug.log files.
+ 
+[debug] [2026-05-03T03:31:50.497Z] [work-queue] {"queuedWork":["/llmbuddy-34bb9/asia-east2/helloWorld-2026-05-03T03:31:50.497Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2026-05-03T03:31:50.497Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/llmbuddy-34bb9/asia-east2/helloWorld-2026-05-03T03:31:50.497Z"],"workRunningCount":1}
+[debug] [2026-05-03T03:31:50.498Z] Accepted request GET /llmbuddy-34bb9/asia-east2/helloWorld --> asia-east2-helloWorld
+[debug] [2026-05-03T03:31:50.498Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2026-05-03T03:31:50.498Z] [functions] Got req.url=/llmbuddy-34bb9/asia-east2/helloWorld, mapping to path=/ {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/llmbuddy-34bb9/asia-east2/helloWorld, mapping to path=/"}}
+[debug] [2026-05-03T03:31:50.501Z] [worker-pool] addWorker(asia-east2-helloWorld) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] addWorker(asia-east2-helloWorld)"}}
+[debug] [2026-05-03T03:31:50.502Z] [worker-pool] Adding worker with key asia-east2-helloWorld, total=1 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Adding worker with key asia-east2-helloWorld, total=1"}}
+[debug] [2026-05-03T03:31:50.804Z] [runtime-status] [62780] Resolved module firebase-admin {"declared":true,"installed":true,"version":"12.7.0","resolution":"/Users/leonchan/WorkSpace/Flutter-Full-Feature-App/functions/node_modules/firebase-admin/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-east2-helloWorld"},"extension":{},"message":"[runtime-status] [62780] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"12.7.0\",\"resolution\":\"/Users/leonchan/WorkSpace/Flutter-Full-Feature-App/functions/node_modules/firebase-admin/lib/index.js\"}"}}
+[debug] [2026-05-03T03:31:50.804Z] [runtime-status] [62780] Resolved module firebase-functions {"declared":true,"installed":true,"version":"6.6.0","resolution":"/Users/leonchan/WorkSpace/Flutter-Full-Feature-App/functions/node_modules/firebase-functions/lib/v2/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-east2-helloWorld"},"extension":{},"message":"[runtime-status] [62780] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"6.6.0\",\"resolution\":\"/Users/leonchan/WorkSpace/Flutter-Full-Feature-App/functions/node_modules/firebase-functions/lib/v2/index.js\"}"}}
+[debug] [2026-05-03T03:31:50.804Z] [runtime-status] [62780] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"}] {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-east2-helloWorld"},"extension":{},"message":"[runtime-status] [62780] Outgoing network have been stubbed. [{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"net\",\"status\":\"mocked\"}]"}}
+[debug] [2026-05-03T03:31:50.805Z] [runtime-status] [62780] Resolved module firebase-functions {"declared":true,"installed":true,"version":"6.6.0","resolution":"/Users/leonchan/WorkSpace/Flutter-Full-Feature-App/functions/node_modules/firebase-functions/lib/v2/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-east2-helloWorld"},"extension":{},"message":"[runtime-status] [62780] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"6.6.0\",\"resolution\":\"/Users/leonchan/WorkSpace/Flutter-Full-Feature-App/functions/node_modules/firebase-functions/lib/v2/index.js\"}"}}
+[debug] [2026-05-03T03:31:50.868Z] [runtime-status] [62780] Checked functions.config() {"config":{}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-east2-helloWorld"},"extension":{},"message":"[runtime-status] [62780] Checked functions.config() {\"config\":{}}"}}
+[debug] [2026-05-03T03:31:50.868Z] [runtime-status] [62780] firebase-functions has been stubbed. {"functionsResolution":{"declared":true,"installed":true,"version":"6.6.0","resolution":"/Users/leonchan/WorkSpace/Flutter-Full-Feature-App/functions/node_modules/firebase-functions/lib/v2/index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-east2-helloWorld"},"extension":{},"message":"[runtime-status] [62780] firebase-functions has been stubbed. {\"functionsResolution\":{\"declared\":true,\"installed\":true,\"version\":\"6.6.0\",\"resolution\":\"/Users/leonchan/WorkSpace/Flutter-Full-Feature-App/functions/node_modules/firebase-functions/lib/v2/index.js\"}}"}}
+[debug] [2026-05-03T03:31:50.868Z] [runtime-status] [62780] Resolved module firebase-functions {"declared":true,"installed":true,"version":"6.6.0","resolution":"/Users/leonchan/WorkSpace/Flutter-Full-Feature-App/functions/node_modules/firebase-functions/lib/v2/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-east2-helloWorld"},"extension":{},"message":"[runtime-status] [62780] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"6.6.0\",\"resolution\":\"/Users/leonchan/WorkSpace/Flutter-Full-Feature-App/functions/node_modules/firebase-functions/lib/v2/index.js\"}"}}
+[debug] [2026-05-03T03:31:50.870Z] [runtime-status] [62780] Resolved module firebase-admin {"declared":true,"installed":true,"version":"12.7.0","resolution":"/Users/leonchan/WorkSpace/Flutter-Full-Feature-App/functions/node_modules/firebase-admin/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-east2-helloWorld"},"extension":{},"message":"[runtime-status] [62780] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"12.7.0\",\"resolution\":\"/Users/leonchan/WorkSpace/Flutter-Full-Feature-App/functions/node_modules/firebase-admin/lib/index.js\"}"}}
+[debug] [2026-05-03T03:31:50.871Z] [runtime-status] [62780] Resolved module firebase-functions {"declared":true,"installed":true,"version":"6.6.0","resolution":"/Users/leonchan/WorkSpace/Flutter-Full-Feature-App/functions/node_modules/firebase-functions/lib/v2/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-east2-helloWorld"},"extension":{},"message":"[runtime-status] [62780] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"6.6.0\",\"resolution\":\"/Users/leonchan/WorkSpace/Flutter-Full-Feature-App/functions/node_modules/firebase-functions/lib/v2/index.js\"}"}}
+[debug] [2026-05-03T03:31:50.871Z] [runtime-status] [62780] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"12.7.0","resolution":"/Users/leonchan/WorkSpace/Flutter-Full-Feature-App/functions/node_modules/firebase-admin/lib/index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-east2-helloWorld"},"extension":{},"message":"[runtime-status] [62780] firebase-admin has been stubbed. {\"adminResolution\":{\"declared\":true,\"installed\":true,\"version\":\"12.7.0\",\"resolution\":\"/Users/leonchan/WorkSpace/Flutter-Full-Feature-App/functions/node_modules/firebase-admin/lib/index.js\"}}"}}
+[debug] [2026-05-03T03:31:50.874Z] [runtime-status] [62780] Functions runtime initialized. {"cwd":"/Users/leonchan/WorkSpace/Flutter-Full-Feature-App/functions","node_version":"20.19.5"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-east2-helloWorld"},"extension":{},"message":"[runtime-status] [62780] Functions runtime initialized. {\"cwd\":\"/Users/leonchan/WorkSpace/Flutter-Full-Feature-App/functions\",\"node_version\":\"20.19.5\"}"}}
+[debug] [2026-05-03T03:31:50.874Z] [runtime-status] [62780] Listening to port: /var/folders/9m/zqylzxwx66dfn_m5fyzjl93w0000gn/T/fire_emu_40cfb5a5b6b20672.sock {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-east2-helloWorld"},"extension":{},"message":"[runtime-status] [62780] Listening to port: /var/folders/9m/zqylzxwx66dfn_m5fyzjl93w0000gn/T/fire_emu_40cfb5a5b6b20672.sock"}}
+[debug] [2026-05-03T03:31:50.913Z] [worker-asia-east2-helloWorld-dcfb883b-3b4e-4be4-a49b-4c4d184571c6]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-east2-helloWorld"},"extension":{},"message":"[worker-asia-east2-helloWorld-dcfb883b-3b4e-4be4-a49b-4c4d184571c6]: IDLE"}}
+[debug] [2026-05-03T03:31:50.913Z] [worker-pool] submitRequest(triggerId=asia-east2-helloWorld) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=asia-east2-helloWorld)"}}
+[info] i  functions: Beginning execution of "asia-east2-helloWorld" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-east2-helloWorld"},"extension":{},"message":"Beginning execution of \"asia-east2-helloWorld\""}}
+[debug] [2026-05-03T03:31:50.913Z] [worker-asia-east2-helloWorld-dcfb883b-3b4e-4be4-a49b-4c4d184571c6]: BUSY {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-east2-helloWorld"},"extension":{},"message":"[worker-asia-east2-helloWorld-dcfb883b-3b4e-4be4-a49b-4c4d184571c6]: BUSY"}}
+[info] >  {"severity":"WARNING","message":"Request has invalid method. GET"} {"user":{"severity":"WARNING","message":"Request has invalid method. GET"},"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-east2-helloWorld"},"extension":{},"message":"\u001b[90m> \u001b[39m {\"severity\":\"WARNING\",\"message\":\"Request has invalid method. GET\"}"}}
+[info] >  {"severity":"ERROR","message":"Error: Invalid request, unable to process.\n    at entryFromArgs (/Users/leonchan/WorkSpace/Flutter-Full-Feature-App/functions/node_modules/firebase-functions/lib/logger/index.js:144:19)\n    at Object.error (/Users/leonchan/WorkSpace/Flutter-Full-Feature-App/functions/node_modules/firebase-functions/lib/logger/index.js:131:11)\n    at /Users/leonchan/WorkSpace/Flutter-Full-Feature-App/functions/node_modules/firebase-functions/lib/common/providers/https.js:432:24\n    at /Users/leonchan/WorkSpace/Flutter-Full-Feature-App/functions/node_modules/firebase-functions/lib/common/providers/https.js:393:25\n    at cors (/Users/leonchan/WorkSpace/Flutter-Full-Feature-App/functions/node_modules/cors/lib/index.js:188:7)\n    at /Users/leonchan/WorkSpace/Flutter-Full-Feature-App/functions/node_modules/cors/lib/index.js:224:17\n    at originCallback (/Users/leonchan/WorkSpace/Flutter-Full-Feature-App/functions/node_modules/cors/lib/index.js:214:15)\n    at /Users/leonchan/WorkSpace/Flutter-Full-Feature-App/functions/node_modules/cors/lib/index.js:219:13\n    at optionsCallback (/Users/leonchan/WorkSpace/Flutter-Full-Feature-App/functions/node_modules/cors/lib/index.js:199:9)\n    at corsMiddleware (/Users/leonchan/WorkSpace/Flutter-Full-Feature-App/functions/node_modules/cors/lib/index.js:204:7)"} {"user":{"severity":"ERROR","message":"Error: Invalid request, unable to process.\n    at entryFromArgs (/Users/leonchan/WorkSpace/Flutter-Full-Feature-App/functions/node_modules/firebase-functions/lib/logger/index.js:144:19)\n    at Object.error (/Users/leonchan/WorkSpace/Flutter-Full-Feature-App/functions/node_modules/firebase-functions/lib/logger/index.js:131:11)\n    at /Users/leonchan/WorkSpace/Flutter-Full-Feature-App/functions/node_modules/firebase-functions/lib/common/providers/https.js:432:24\n    at /Users/leonchan/WorkSpace/Flutter-Full-Feature-App/functions/node_modules/firebase-functions/lib/common/providers/https.js:393:25\n    at cors (/Users/leonchan/WorkSpace/Flutter-Full-Feature-App/functions/node_modules/cors/lib/index.js:188:7)\n    at /Users/leonchan/WorkSpace/Flutter-Full-Feature-App/functions/node_modules/cors/lib/index.js:224:17\n    at originCallback (/Users/leonchan/WorkSpace/Flutter-Full-Feature-App/functions/node_modules/cors/lib/index.js:214:15)\n    at /Users/leonchan/WorkSpace/Flutter-Full-Feature-App/functions/node_modules/cors/lib/index.js:219:13\n    at optionsCallback (/Users/leonchan/WorkSpace/Flutter-Full-Feature-App/functions/node_modules/cors/lib/index.js:199:9)\n    at corsMiddleware (/Users/leonchan/WorkSpace/Flutter-Full-Feature-App/functions/node_modules/cors/lib/index.js:204:7)"},"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-east2-helloWorld"},"extension":{},"message":"\u001b[90m> \u001b[39m {\"severity\":\"ERROR\",\"message\":\"Error: Invalid request, unable to process.\\n    at entryFromArgs (/Users/leonchan/WorkSpace/Flutter-Full-Feature-App/functions/node_modules/firebase-functions/lib/logger/index.js:144:19)\\n    at Object.error (/Users/leonchan/WorkSpace/Flutter-Full-Feature-App/functions/node_modules/firebase-functions/lib/logger/index.js:131:11)\\n    at /Users/leonchan/WorkSpace/Flutter-Full-Feature-App/functions/node_modules/firebase-functions/lib/common/providers/https.js:432:24\\n    at /Users/leonchan/WorkSpace/Flutter-Full-Feature-App/functions/node_modules/firebase-functions/lib/common/providers/https.js:393:25\\n    at cors (/Users/leonchan/WorkSpace/Flutter-Full-Feature-App/functions/node_modules/cors/lib/index.js:188:7)\\n    at /Users/leonchan/WorkSpace/Flutter-Full-Feature-App/functions/node_modules/cors/lib/index.js:224:17\\n    at originCallback (/Users/leonchan/WorkSpace/Flutter-Full-Feature-App/functions/node_modules/cors/lib/index.js:214:15)\\n    at /Users/leonchan/WorkSpace/Flutter-Full-Feature-App/functions/node_modules/cors/lib/index.js:219:13\\n    at optionsCallback (/Users/leonchan/WorkSpace/Flutter-Full-Feature-App/functions/node_modules/cors/lib/index.js:199:9)\\n    at corsMiddleware (/Users/leonchan/WorkSpace/Flutter-Full-Feature-App/functions/node_modules/cors/lib/index.js:204:7)\"}"}}
+[debug] [2026-05-03T03:31:50.916Z] Finishing up request with event=pause {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-east2-helloWorld"},"extension":{},"message":"Finishing up request with event=pause"}}
+[info] i  functions: Finished "asia-east2-helloWorld" in 3.461708ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-east2-helloWorld"},"extension":{},"message":"Finished \"asia-east2-helloWorld\" in 3.461708ms"}}
+[debug] [2026-05-03T03:31:50.917Z] [worker-asia-east2-helloWorld-dcfb883b-3b4e-4be4-a49b-4c4d184571c6]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-east2-helloWorld"},"extension":{},"message":"[worker-asia-east2-helloWorld-dcfb883b-3b4e-4be4-a49b-4c4d184571c6]: IDLE"}}
+[debug] [2026-05-03T03:31:50.917Z] Finishing up request with event=finish {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-east2-helloWorld"},"extension":{},"message":"Finishing up request with event=finish"}}
+[debug] [2026-05-03T03:31:50.917Z] Finishing up request with event=close {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-east2-helloWorld"},"extension":{},"message":"Finishing up request with event=close"}}
+[debug] [2026-05-03T03:31:50.917Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
+[debug] [2026-05-03T03:31:51.030Z] Functions emulator received unknown request at path /favicon.ico
+[debug] [2026-05-03T03:37:16.188Z] [work-queue] {"queuedWork":["/llmbuddy-34bb9/asia-east2/helloWorld-2026-05-03T03:37:16.188Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2026-05-03T03:37:16.189Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/llmbuddy-34bb9/asia-east2/helloWorld-2026-05-03T03:37:16.188Z"],"workRunningCount":1}
+[debug] [2026-05-03T03:37:16.189Z] Accepted request POST /llmbuddy-34bb9/asia-east2/helloWorld --> asia-east2-helloWorld
+[debug] [2026-05-03T03:37:16.193Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2026-05-03T03:37:16.194Z] [functions] Got req.url=/llmbuddy-34bb9/asia-east2/helloWorld, mapping to path=/ {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/llmbuddy-34bb9/asia-east2/helloWorld, mapping to path=/"}}
+[debug] [2026-05-03T03:37:16.195Z] [worker-pool] submitRequest(triggerId=asia-east2-helloWorld) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=asia-east2-helloWorld)"}}
+[info] i  functions: Beginning execution of "asia-east2-helloWorld" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-east2-helloWorld"},"extension":{},"message":"Beginning execution of \"asia-east2-helloWorld\""}}
+[debug] [2026-05-03T03:37:16.197Z] [worker-asia-east2-helloWorld-dcfb883b-3b4e-4be4-a49b-4c4d184571c6]: BUSY {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-east2-helloWorld"},"extension":{},"message":"[worker-asia-east2-helloWorld-dcfb883b-3b4e-4be4-a49b-4c4d184571c6]: BUSY"}}
+[info] >  {"verifications":{"app":"MISSING","auth":"MISSING"},"logging.googleapis.com/labels":{"firebase-log-type":"callable-request-verification"},"severity":"DEBUG","message":"Callable request verification passed"} {"user":{"verifications":{"app":"MISSING","auth":"MISSING"},"logging.googleapis.com/labels":{"firebase-log-type":"callable-request-verification"},"severity":"DEBUG","message":"Callable request verification passed"},"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-east2-helloWorld"},"extension":{},"message":"\u001b[90m> \u001b[39m {\"verifications\":{\"app\":\"MISSING\",\"auth\":\"MISSING\"},\"logging.googleapis.com/labels\":{\"firebase-log-type\":\"callable-request-verification\"},\"severity\":\"DEBUG\",\"message\":\"Callable request verification passed\"}"}}
+[info] >  {"structuredData":true,"severity":"INFO","message":"Hello world was called!"} {"user":{"structuredData":true,"severity":"INFO","message":"Hello world was called!"},"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-east2-helloWorld"},"extension":{},"message":"\u001b[90m> \u001b[39m {\"structuredData\":true,\"severity\":\"INFO\",\"message\":\"Hello world was called!\"}"}}
+[debug] [2026-05-03T03:37:16.221Z] Finishing up request with event=pause {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-east2-helloWorld"},"extension":{},"message":"Finishing up request with event=pause"}}
+[info] i  functions: Finished "asia-east2-helloWorld" in 24.802459ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-east2-helloWorld"},"extension":{},"message":"Finished \"asia-east2-helloWorld\" in 24.802459ms"}}
+[debug] [2026-05-03T03:37:16.222Z] [worker-asia-east2-helloWorld-dcfb883b-3b4e-4be4-a49b-4c4d184571c6]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-east2-helloWorld"},"extension":{},"message":"[worker-asia-east2-helloWorld-dcfb883b-3b4e-4be4-a49b-4c4d184571c6]: IDLE"}}
+[debug] [2026-05-03T03:37:16.222Z] Finishing up request with event=finish {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-east2-helloWorld"},"extension":{},"message":"Finishing up request with event=finish"}}
+[debug] [2026-05-03T03:37:16.222Z] Finishing up request with event=close {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-east2-helloWorld"},"extension":{},"message":"Finishing up request with event=close"}}
+[debug] [2026-05-03T03:37:16.222Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
+[debug] [2026-05-03T03:38:36.402Z] File /Users/leonchan/WorkSpace/Flutter-Full-Feature-App/functions/src/index.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/leonchan/WorkSpace/Flutter-Full-Feature-App/functions/src/index.ts changed, reloading triggers"}}
+[debug] [2026-05-03T03:38:37.403Z] Validating nodejs source
+[warn] ⚠  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[warn] ⚠  functions: Please note that there will be breaking changes when you upgrade. 
+[debug] [2026-05-03T03:38:37.787Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "lint": "eslint --ext .js,.ts .",
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "22"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "firebase-admin": "^12.6.0",
+    "firebase-functions": "^6.0.1"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.12.0",
+    "@typescript-eslint/parser": "^5.12.0",
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.25.4",
+    "firebase-functions-test": "^3.1.0",
+    "typescript": "^5.7.3"
+  },
+  "private": true
+}
+[debug] [2026-05-03T03:38:37.787Z] Building nodejs source
+[debug] [2026-05-03T03:38:37.787Z] Failed to find version of module node: reached end of search path /Users/leonchan/WorkSpace/Flutter-Full-Feature-App/functions/node_modules
+[warn] ⚠  functions: Your requested "node" version "22" doesn't match your global version "20". Using node@20 from host. 
+[debug] [2026-05-03T03:38:37.787Z] Could not find functions.yaml. Must use http discovery
+[debug] [2026-05-03T03:38:37.788Z] Found firebase-functions binary at '/Users/leonchan/WorkSpace/Flutter-Full-Feature-App/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8441
+
+[debug] [2026-05-03T03:38:38.034Z] Got response from /__/functions.yaml {"endpoints":{"helloWorld":{"availableMemoryMb":256,"timeoutSeconds":null,"minInstances":null,"maxInstances":10,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","region":["asia-east2"],"labels":{},"callableTrigger":{},"entryPoint":"helloWorld"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{}}
+[debug] [2026-05-03T03:38:42.043Z] defaultcredentials: writing to file /Users/leonchan/.config/firebase/leonchantinglok_gmail_com_application_default_credentials.json
+[debug] [2026-05-03T03:38:42.043Z] Setting GAC to /Users/leonchan/.config/firebase/leonchantinglok_gmail_com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to /Users/leonchan/.config/firebase/leonchantinglok_gmail_com_application_default_credentials.json"}}
+[info] ✔  functions: Loaded functions definitions from source: helloWorld. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: helloWorld."}}
+[debug] [2026-05-03T03:38:42.044Z] [worker-pool] Shutting down IDLE worker (asia-east2-helloWorld) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Shutting down IDLE worker (asia-east2-helloWorld)"}}
+[debug] [2026-05-03T03:38:42.044Z] [worker-asia-east2-helloWorld-dcfb883b-3b4e-4be4-a49b-4c4d184571c6]: FINISHING {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-east2-helloWorld"},"extension":{},"message":"[worker-asia-east2-helloWorld-dcfb883b-3b4e-4be4-a49b-4c4d184571c6]: FINISHING"}}
+[debug] [2026-05-03T03:38:42.047Z] [worker-asia-east2-helloWorld-dcfb883b-3b4e-4be4-a49b-4c4d184571c6]: exited {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-east2-helloWorld"},"extension":{},"message":"[worker-asia-east2-helloWorld-dcfb883b-3b4e-4be4-a49b-4c4d184571c6]: exited"}}
+[debug] [2026-05-03T03:38:42.047Z] [worker-asia-east2-helloWorld-dcfb883b-3b4e-4be4-a49b-4c4d184571c6]: FINISHED {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-east2-helloWorld"},"extension":{},"message":"[worker-asia-east2-helloWorld-dcfb883b-3b4e-4be4-a49b-4c4d184571c6]: FINISHED"}}
+[debug] [2026-05-03T03:38:45.550Z] File /Users/leonchan/WorkSpace/Flutter-Full-Feature-App/functions/lib/index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/leonchan/WorkSpace/Flutter-Full-Feature-App/functions/lib/index.js changed, reloading triggers"}}
+[debug] [2026-05-03T03:38:45.550Z] File /Users/leonchan/WorkSpace/Flutter-Full-Feature-App/functions/lib/index.js.map changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/leonchan/WorkSpace/Flutter-Full-Feature-App/functions/lib/index.js.map changed, reloading triggers"}}
+[debug] [2026-05-03T03:38:46.552Z] Validating nodejs source
+[warn] ⚠  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[warn] ⚠  functions: Please note that there will be breaking changes when you upgrade. 
+[debug] [2026-05-03T03:38:46.872Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "lint": "eslint --ext .js,.ts .",
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "22"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "firebase-admin": "^12.6.0",
+    "firebase-functions": "^6.0.1"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.12.0",
+    "@typescript-eslint/parser": "^5.12.0",
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.25.4",
+    "firebase-functions-test": "^3.1.0",
+    "typescript": "^5.7.3"
+  },
+  "private": true
+}
+[debug] [2026-05-03T03:38:46.872Z] Building nodejs source
+[debug] [2026-05-03T03:38:46.872Z] Failed to find version of module node: reached end of search path /Users/leonchan/WorkSpace/Flutter-Full-Feature-App/functions/node_modules
+[warn] ⚠  functions: Your requested "node" version "22" doesn't match your global version "20". Using node@20 from host. 
+[debug] [2026-05-03T03:38:46.872Z] Could not find functions.yaml. Must use http discovery
+[debug] [2026-05-03T03:38:46.873Z] Found firebase-functions binary at '/Users/leonchan/WorkSpace/Flutter-Full-Feature-App/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8555
+
+[debug] [2026-05-03T03:38:47.091Z] Got response from /__/functions.yaml {"endpoints":{"helloWorld":{"availableMemoryMb":256,"timeoutSeconds":null,"minInstances":null,"maxInstances":10,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","region":["asia-east2"],"labels":{},"callableTrigger":{},"entryPoint":"helloWorld"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{}}
+[debug] [2026-05-03T03:38:51.112Z] defaultcredentials: writing to file /Users/leonchan/.config/firebase/leonchantinglok_gmail_com_application_default_credentials.json
+[debug] [2026-05-03T03:38:51.114Z] Setting GAC to /Users/leonchan/.config/firebase/leonchantinglok_gmail_com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to /Users/leonchan/.config/firebase/leonchantinglok_gmail_com_application_default_credentials.json"}}
+[info] ✔  functions: Loaded functions definitions from source: helloWorld. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: helloWorld."}}
+[debug] [2026-05-03T03:38:53.369Z] [work-queue] {"queuedWork":["/llmbuddy-34bb9/asia-east2/helloWorld-2026-05-03T03:38:53.369Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2026-05-03T03:38:53.369Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/llmbuddy-34bb9/asia-east2/helloWorld-2026-05-03T03:38:53.369Z"],"workRunningCount":1}
+[debug] [2026-05-03T03:38:53.370Z] Accepted request POST /llmbuddy-34bb9/asia-east2/helloWorld --> asia-east2-helloWorld
+[debug] [2026-05-03T03:38:53.374Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2026-05-03T03:38:53.374Z] [functions] Got req.url=/llmbuddy-34bb9/asia-east2/helloWorld, mapping to path=/ {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/llmbuddy-34bb9/asia-east2/helloWorld, mapping to path=/"}}
+[debug] [2026-05-03T03:38:53.374Z] [worker-pool] Cleaned up workers for asia-east2-helloWorld: 1 --> 0 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Cleaned up workers for asia-east2-helloWorld: 1 --> 0"}}
+[debug] [2026-05-03T03:38:53.376Z] [worker-pool] addWorker(asia-east2-helloWorld) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] addWorker(asia-east2-helloWorld)"}}
+[debug] [2026-05-03T03:38:53.376Z] [worker-pool] Adding worker with key asia-east2-helloWorld, total=1 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Adding worker with key asia-east2-helloWorld, total=1"}}
+[debug] [2026-05-03T03:38:53.949Z] [runtime-status] [64363] Resolved module firebase-admin {"declared":true,"installed":true,"version":"12.7.0","resolution":"/Users/leonchan/WorkSpace/Flutter-Full-Feature-App/functions/node_modules/firebase-admin/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-east2-helloWorld"},"extension":{},"message":"[runtime-status] [64363] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"12.7.0\",\"resolution\":\"/Users/leonchan/WorkSpace/Flutter-Full-Feature-App/functions/node_modules/firebase-admin/lib/index.js\"}"}}
+[debug] [2026-05-03T03:38:53.949Z] [runtime-status] [64363] Resolved module firebase-functions {"declared":true,"installed":true,"version":"6.6.0","resolution":"/Users/leonchan/WorkSpace/Flutter-Full-Feature-App/functions/node_modules/firebase-functions/lib/v2/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-east2-helloWorld"},"extension":{},"message":"[runtime-status] [64363] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"6.6.0\",\"resolution\":\"/Users/leonchan/WorkSpace/Flutter-Full-Feature-App/functions/node_modules/firebase-functions/lib/v2/index.js\"}"}}
+[debug] [2026-05-03T03:38:53.950Z] [runtime-status] [64363] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"}] {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-east2-helloWorld"},"extension":{},"message":"[runtime-status] [64363] Outgoing network have been stubbed. [{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"net\",\"status\":\"mocked\"}]"}}
+[debug] [2026-05-03T03:38:53.950Z] [runtime-status] [64363] Resolved module firebase-functions {"declared":true,"installed":true,"version":"6.6.0","resolution":"/Users/leonchan/WorkSpace/Flutter-Full-Feature-App/functions/node_modules/firebase-functions/lib/v2/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-east2-helloWorld"},"extension":{},"message":"[runtime-status] [64363] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"6.6.0\",\"resolution\":\"/Users/leonchan/WorkSpace/Flutter-Full-Feature-App/functions/node_modules/firebase-functions/lib/v2/index.js\"}"}}
+[debug] [2026-05-03T03:38:54.006Z] [runtime-status] [64363] Checked functions.config() {"config":{}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-east2-helloWorld"},"extension":{},"message":"[runtime-status] [64363] Checked functions.config() {\"config\":{}}"}}
+[debug] [2026-05-03T03:38:54.006Z] [runtime-status] [64363] firebase-functions has been stubbed. {"functionsResolution":{"declared":true,"installed":true,"version":"6.6.0","resolution":"/Users/leonchan/WorkSpace/Flutter-Full-Feature-App/functions/node_modules/firebase-functions/lib/v2/index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-east2-helloWorld"},"extension":{},"message":"[runtime-status] [64363] firebase-functions has been stubbed. {\"functionsResolution\":{\"declared\":true,\"installed\":true,\"version\":\"6.6.0\",\"resolution\":\"/Users/leonchan/WorkSpace/Flutter-Full-Feature-App/functions/node_modules/firebase-functions/lib/v2/index.js\"}}"}}
+[debug] [2026-05-03T03:38:54.006Z] [runtime-status] [64363] Resolved module firebase-functions {"declared":true,"installed":true,"version":"6.6.0","resolution":"/Users/leonchan/WorkSpace/Flutter-Full-Feature-App/functions/node_modules/firebase-functions/lib/v2/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-east2-helloWorld"},"extension":{},"message":"[runtime-status] [64363] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"6.6.0\",\"resolution\":\"/Users/leonchan/WorkSpace/Flutter-Full-Feature-App/functions/node_modules/firebase-functions/lib/v2/index.js\"}"}}
+[debug] [2026-05-03T03:38:54.008Z] [runtime-status] [64363] Resolved module firebase-admin {"declared":true,"installed":true,"version":"12.7.0","resolution":"/Users/leonchan/WorkSpace/Flutter-Full-Feature-App/functions/node_modules/firebase-admin/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-east2-helloWorld"},"extension":{},"message":"[runtime-status] [64363] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"12.7.0\",\"resolution\":\"/Users/leonchan/WorkSpace/Flutter-Full-Feature-App/functions/node_modules/firebase-admin/lib/index.js\"}"}}
+[debug] [2026-05-03T03:38:54.009Z] [runtime-status] [64363] Resolved module firebase-functions {"declared":true,"installed":true,"version":"6.6.0","resolution":"/Users/leonchan/WorkSpace/Flutter-Full-Feature-App/functions/node_modules/firebase-functions/lib/v2/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-east2-helloWorld"},"extension":{},"message":"[runtime-status] [64363] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"6.6.0\",\"resolution\":\"/Users/leonchan/WorkSpace/Flutter-Full-Feature-App/functions/node_modules/firebase-functions/lib/v2/index.js\"}"}}
+[debug] [2026-05-03T03:38:54.009Z] [runtime-status] [64363] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"12.7.0","resolution":"/Users/leonchan/WorkSpace/Flutter-Full-Feature-App/functions/node_modules/firebase-admin/lib/index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-east2-helloWorld"},"extension":{},"message":"[runtime-status] [64363] firebase-admin has been stubbed. {\"adminResolution\":{\"declared\":true,\"installed\":true,\"version\":\"12.7.0\",\"resolution\":\"/Users/leonchan/WorkSpace/Flutter-Full-Feature-App/functions/node_modules/firebase-admin/lib/index.js\"}}"}}
+[debug] [2026-05-03T03:38:54.012Z] [runtime-status] [64363] Functions runtime initialized. {"cwd":"/Users/leonchan/WorkSpace/Flutter-Full-Feature-App/functions","node_version":"20.19.5"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-east2-helloWorld"},"extension":{},"message":"[runtime-status] [64363] Functions runtime initialized. {\"cwd\":\"/Users/leonchan/WorkSpace/Flutter-Full-Feature-App/functions\",\"node_version\":\"20.19.5\"}"}}
+[debug] [2026-05-03T03:38:54.012Z] [runtime-status] [64363] Listening to port: /var/folders/9m/zqylzxwx66dfn_m5fyzjl93w0000gn/T/fire_emu_10995fe9f58a100d.sock {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-east2-helloWorld"},"extension":{},"message":"[runtime-status] [64363] Listening to port: /var/folders/9m/zqylzxwx66dfn_m5fyzjl93w0000gn/T/fire_emu_10995fe9f58a100d.sock"}}
+[debug] [2026-05-03T03:38:54.089Z] [worker-asia-east2-helloWorld-990798a8-5b21-468b-96cd-9e543803b08b]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-east2-helloWorld"},"extension":{},"message":"[worker-asia-east2-helloWorld-990798a8-5b21-468b-96cd-9e543803b08b]: IDLE"}}
+[debug] [2026-05-03T03:38:54.089Z] [worker-pool] submitRequest(triggerId=asia-east2-helloWorld) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=asia-east2-helloWorld)"}}
+[info] i  functions: Beginning execution of "asia-east2-helloWorld" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-east2-helloWorld"},"extension":{},"message":"Beginning execution of \"asia-east2-helloWorld\""}}
+[debug] [2026-05-03T03:38:54.089Z] [worker-asia-east2-helloWorld-990798a8-5b21-468b-96cd-9e543803b08b]: BUSY {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-east2-helloWorld"},"extension":{},"message":"[worker-asia-east2-helloWorld-990798a8-5b21-468b-96cd-9e543803b08b]: BUSY"}}
+[info] >  {"verifications":{"app":"MISSING","auth":"MISSING"},"logging.googleapis.com/labels":{"firebase-log-type":"callable-request-verification"},"severity":"DEBUG","message":"Callable request verification passed"} {"user":{"verifications":{"app":"MISSING","auth":"MISSING"},"logging.googleapis.com/labels":{"firebase-log-type":"callable-request-verification"},"severity":"DEBUG","message":"Callable request verification passed"},"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-east2-helloWorld"},"extension":{},"message":"\u001b[90m> \u001b[39m {\"verifications\":{\"app\":\"MISSING\",\"auth\":\"MISSING\"},\"logging.googleapis.com/labels\":{\"firebase-log-type\":\"callable-request-verification\"},\"severity\":\"DEBUG\",\"message\":\"Callable request verification passed\"}"}}
+[info] >  {"structuredData":true,"severity":"INFO","message":"Hello world was called!"} {"user":{"structuredData":true,"severity":"INFO","message":"Hello world was called!"},"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-east2-helloWorld"},"extension":{},"message":"\u001b[90m> \u001b[39m {\"structuredData\":true,\"severity\":\"INFO\",\"message\":\"Hello world was called!\"}"}}
+[debug] [2026-05-03T03:38:54.098Z] Finishing up request with event=pause {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-east2-helloWorld"},"extension":{},"message":"Finishing up request with event=pause"}}
+[info] i  functions: Finished "asia-east2-helloWorld" in 8.927334ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-east2-helloWorld"},"extension":{},"message":"Finished \"asia-east2-helloWorld\" in 8.927334ms"}}
+[debug] [2026-05-03T03:38:54.098Z] [worker-asia-east2-helloWorld-990798a8-5b21-468b-96cd-9e543803b08b]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-east2-helloWorld"},"extension":{},"message":"[worker-asia-east2-helloWorld-990798a8-5b21-468b-96cd-9e543803b08b]: IDLE"}}
+[debug] [2026-05-03T03:38:54.098Z] Finishing up request with event=finish {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-east2-helloWorld"},"extension":{},"message":"Finishing up request with event=finish"}}
+[debug] [2026-05-03T03:38:54.098Z] Finishing up request with event=close {"metadata":{"emulator":{"name":"functions"},"function":{"name":"asia-east2-helloWorld"},"extension":{},"message":"Finishing up request with event=close"}}
+[debug] [2026-05-03T03:38:54.098Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
+[debug] [2026-05-03T03:39:41.182Z] File /Users/leonchan/WorkSpace/Flutter-Full-Feature-App/functions/src/index.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/leonchan/WorkSpace/Flutter-Full-Feature-App/functions/src/index.ts changed, reloading triggers"}}
+[debug] [2026-05-03T03:39:42.183Z] Validating nodejs source
+[warn] ⚠  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[warn] ⚠  functions: Please note that there will be breaking changes when you upgrade. 
+[debug] [2026-05-03T03:39:42.474Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "lint": "eslint --ext .js,.ts .",
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "22"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "firebase-admin": "^12.6.0",
+    "firebase-functions": "^6.0.1"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.12.0",
+    "@typescript-eslint/parser": "^5.12.0",
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.25.4",
+    "firebase-functions-test": "^3.1.0",
+    "typescript": "^5.7.3"
+  },
+  "private": true
+}
+[debug] [2026-05-03T03:39:42.474Z] Building nodejs source
+[debug] [2026-05-03T03:39:42.474Z] Failed to find version of module node: reached end of search path /Users/leonchan/WorkSpace/Flutter-Full-Feature-App/functions/node_modules
+[warn] ⚠  functions: Your requested "node" version "22" doesn't match your global version "20". Using node@20 from host. 
+[debug] [2026-05-03T03:39:42.474Z] Could not find functions.yaml. Must use http discovery
+[debug] [2026-05-03T03:39:42.475Z] Found firebase-functions binary at '/Users/leonchan/WorkSpace/Flutter-Full-Feature-App/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8036
+
+[debug] [2026-05-03T03:39:42.621Z] Got response from /__/functions.yaml {"endpoints":{"helloWorld":{"availableMemoryMb":256,"timeoutSeconds":null,"minInstances":null,"maxInstances":10,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","region":["asia-east2"],"labels":{},"callableTrigger":{},"entryPoint":"helloWorld"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{}}

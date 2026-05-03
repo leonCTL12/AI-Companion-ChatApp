@@ -25,17 +25,18 @@ import * as logger from "firebase-functions/logger";
 // In the v1 API, each function can only serve one request per container, so
 // this will be the maximum concurrent request count.
 setGlobalOptions({
-  region: "asia-east2",
-  memory: "256MiB", // Small and cheap for a demo
-  maxInstances: 10,
+    region: "asia-east2",
+    memory: "256MiB", // Small and cheap for a demo
+    maxInstances: 10,
 });
 export const helloWorld = onCall((request) => {
-  logger.info("Hello world was called!", {structuredData: true});
+    logger.info("Hello world was called!", {structuredData: true});
 
-  const name = request.data.name || "Stranger";
+    const name = request.data.name || "Stranger";
 
-  return {
-    message: `Hello ${name} from the Firebase Cloud!`,
-    status: "success",
-  };
+    return {
+        message: `Hello ${name} from the Firebase Cloud! Local`,
+        status: "success",
+    };
 });
+r
