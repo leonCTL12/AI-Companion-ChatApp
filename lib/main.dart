@@ -2,7 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:llm_chatbot/core/theme/app_theme.dart';
-import 'package:llm_chatbot/features/chat/presentation/chat_page.dart';
+import 'package:llm_chatbot/features/chat/presentation/pages/chat_page.dart';
 import 'package:llm_chatbot/firebase_options.dart';
 
 Future<void> main() async {

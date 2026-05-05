@@ -1,13 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:llm_chatbot/features/chat/application/selected_image_provider.dart';
 import 'package:llm_chatbot/features/chat/presentation/widgets/media_button.dart';
 
-class MediaBottomSheet extends StatelessWidget {
+class MediaBottomSheet extends ConsumerWidget {
   MediaBottomSheet({super.key});
 
   final ImagePicker _imagePicker = ImagePicker();
 
-  Future<void> _pickImage(BuildContext context, ImageSource source) async {
+  Future<void> _pickImage(
+    BuildContext context,
+    ImageSource source,
+    WidgetRef ref,
+  ) async {
     try {
       final XFile? pickedFile = await _imagePicker.pickImage(
         source: source,
@@ -15,10 +21,10 @@ class MediaBottomSheet extends StatelessWidget {
         imageQuality: 80,
       );
 
-      // 1. Check if the widget is still in the tree before using context
       if (!context.mounted) return;
       if (pickedFile != null) {
-        Navigator.pop(context, pickedFile.path);
+        ref.read(selectedImageProvider.notifier).updatePath(pickedFile.path);
+        Navigator.pop(context);
       }
     } catch (e) {
       debugPrint("Error picking image: $e");
@@ -26,7 +32,7 @@ class MediaBottomSheet extends StatelessWidget {
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final height =
         MediaQuery.of(context).size.height * 0.2; //20% of the screen height
 
@@ -40,7 +46,7 @@ class MediaBottomSheet extends StatelessWidget {
             child: MediaButton(
               iconData: Icons.camera_alt,
               label: "camera",
-              onPressed: () => _pickImage(context, ImageSource.camera),
+              onPressed: () => _pickImage(context, ImageSource.camera, ref),
             ),
           ),
           SizedBox(width: 8),
@@ -48,7 +54,7 @@ class MediaBottomSheet extends StatelessWidget {
             child: MediaButton(
               iconData: Icons.photo_library,
               label: "Photos",
-              onPressed: () => _pickImage(context, ImageSource.gallery),
+              onPressed: () => _pickImage(context, ImageSource.gallery, ref),
             ),
           ),
         ],
