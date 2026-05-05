@@ -1,7 +1,29 @@
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:llm_chatbot/features/chat/presentation/widgets/media_button.dart';
 
 class MediaBottomSheet extends StatelessWidget {
-  const MediaBottomSheet({super.key});
+  MediaBottomSheet({super.key});
+
+  final ImagePicker _imagePicker = ImagePicker();
+
+  Future<void> _pickImage(BuildContext context, ImageSource source) async {
+    try {
+      final XFile? pickedFile = await _imagePicker.pickImage(
+        source: source,
+        maxWidth: 1024,
+        imageQuality: 80,
+      );
+
+      // 1. Check if the widget is still in the tree before using context
+      if (!context.mounted) return;
+      if (pickedFile != null) {
+        Navigator.pop(context, pickedFile.path);
+      }
+    } catch (e) {
+      debugPrint("Error picking image: $e");
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -15,42 +37,18 @@ class MediaBottomSheet extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Expanded(
-            child: ElevatedButton.icon(
-              style: ElevatedButton.styleFrom(
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(12),
-                ),
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 24,
-                  vertical: 16,
-                ),
-              ),
-              onPressed: () {},
-              icon: const Icon(Icons.camera_alt),
-              label: FittedBox(
-                fit: BoxFit.scaleDown,
-                child: const Text("Camera"),
-              ),
+            child: MediaButton(
+              iconData: Icons.camera_alt,
+              label: "camera",
+              onPressed: () => _pickImage(context, ImageSource.camera),
             ),
           ),
           SizedBox(width: 8),
           Expanded(
-            child: ElevatedButton.icon(
-              style: ElevatedButton.styleFrom(
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(12),
-                ),
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 24,
-                  vertical: 16,
-                ),
-              ),
-              onPressed: () {},
-              icon: const Icon(Icons.photo_library),
-              label: FittedBox(
-                fit: BoxFit.scaleDown,
-                child: const Text("Photos"),
-              ),
+            child: MediaButton(
+              iconData: Icons.photo_library,
+              label: "Photos",
+              onPressed: () => _pickImage(context, ImageSource.gallery),
             ),
           ),
         ],

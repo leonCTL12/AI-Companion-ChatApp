@@ -24,6 +24,10 @@
 	<string>????</string>
 	<key>CFBundleVersion</key>
 	<string>$(FLUTTER_BUILD_NUMBER)</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+    <string>This app needs access to your photos so you can share them in chat.</string>
+    <key>NSCameraUsageDescription</key>
+    <string>This app needs access to your camera so you can take and share photos directly in the chat.</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UIApplicationSceneManifest</key>

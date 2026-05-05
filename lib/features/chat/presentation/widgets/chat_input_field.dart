@@ -7,6 +7,17 @@ import 'media_bottom_sheet.dart';
 class ChatInputField extends ConsumerWidget {
   const ChatInputField({super.key});
 
+  void _onAddMediaPressed(BuildContext context, WidgetRef ref) async {
+    final String? imagePath = await showModalBottomSheet<String>(
+      context: context,
+      builder: (context) => MediaBottomSheet(),
+    );
+
+    if (imagePath != null) {
+      print("Selected Image: $imagePath");
+    }
+  }
+
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final controller = TextEditingController();
@@ -18,14 +29,7 @@ class ChatInputField extends ConsumerWidget {
         child: Row(
           children: [
             IconButton(
-              onPressed: () {
-                showModalBottomSheet(
-                  context: context,
-                  builder: (context) {
-                    return MediaBottomSheet();
-                  },
-                );
-              },
+              onPressed: () => _onAddMediaPressed(context, ref),
               icon: Icon(Icons.add),
             ),
             Expanded(
