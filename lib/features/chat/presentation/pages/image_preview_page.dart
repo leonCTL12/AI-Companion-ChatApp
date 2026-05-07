@@ -27,51 +27,59 @@ class _ImagePreviewPageState extends ConsumerState<ImagePreviewPage> {
   @override
   void dispose() {
     _captionController.dispose();
-    //Microtask is some urgent little tasks run between the event queue
-    //Run immediate after this frame/lifecycle task
-    //To avoid modifying state while the widget tree is still in the disposal/rebuild state
-    Future.microtask(() => ref.read(selectedImageProvider.notifier).clear());
     super.dispose();
   }
 
   void onSend() {
     //TODO: implement send
+    Navigator.of(context).pop();
   }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.black,
-      extendBodyBehindAppBar: true,
-      //Full Screen
-      resizeToAvoidBottomInset: true,
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        leading: IconButton(
-          onPressed: () => Navigator.of(context).pop(),
-          icon: const Icon(Icons.close, color: Colors.white, size: 28),
+    return PopScope(
+      canPop: true,
+      onPopInvokedWithResult: (didPop, result) {
+        if (didPop) {
+          ref.read(selectedImageProvider.notifier).clear();
+        }
+      },
+      child: Scaffold(
+        backgroundColor: Colors.black,
+        extendBodyBehindAppBar: true,
+        //Full Screen
+        resizeToAvoidBottomInset: true,
+        appBar: AppBar(
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+          leading: IconButton(
+            onPressed: () => Navigator.of(context).pop(),
+            icon: const Icon(Icons.close, color: Colors.white, size: 28),
+          ),
         ),
-      ),
-      body: Column(
-        children: [
-          Expanded(
-            child: InteractiveViewer(
-              //Allow Pinch to Zoom
-              minScale: 1.0,
-              maxScale: 4.0,
-              child: Center(
-                child: Image.file(File(widget.imagePath), fit: BoxFit.contain),
+        body: Column(
+          children: [
+            Expanded(
+              child: InteractiveViewer(
+                //Allow Pinch to Zoom
+                minScale: 1.0,
+                maxScale: 4.0,
+                child: Center(
+                  child: Image.file(
+                    File(widget.imagePath),
+                    fit: BoxFit.contain,
+                  ),
+                ),
               ),
             ),
-          ),
-          //Caption Input Area
-          InputField(
-            controller: _captionController,
-            onSend: onSend,
-            hintText: "Write Caption Here",
-          ),
-        ],
+            //Caption Input Area
+            InputField(
+              controller: _captionController,
+              onSend: onSend,
+              hintText: "Write Caption Here",
+            ),
+          ],
+        ),
       ),
     );
   }
