@@ -23,8 +23,10 @@ class MediaBottomSheet extends ConsumerWidget {
 
       if (!context.mounted) return;
       if (pickedFile != null) {
-        ref.read(selectedImageProvider.notifier).updatePath(pickedFile.path);
+        // 1. Capture the notifier while the widget is still "alive"
+        final imageNotifier = ref.read(selectedImageProvider.notifier);
         Navigator.pop(context);
+        imageNotifier.updatePath(pickedFile.path);
       }
     } catch (e) {
       debugPrint("Error picking image: $e");
