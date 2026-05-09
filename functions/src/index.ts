@@ -67,10 +67,29 @@ export const getChatResponse = onCall({secrets: ["OPENROUTER_API_KEY"]}, async (
 
     const messages = [
         {role: "system", content: SYSTEM_PROMPT},
-        ...history.map((m: any) => ({
-            role: m.fromUser ? "user" : "assistant",
-            content: m.content,
-        })),
+        ...history.map((m: any) => {
+            const role = m.fromUser ? "user" : "assistant";
+
+            if (!m.encodedImage) {
+                return {
+                    role: role,
+                    content: m.content,
+                };
+            }
+
+
+            return {
+                role: role,
+                content: [
+                    {type: "text", text: m.content},
+                    {
+                        type: "image_url", image_url: {
+                            url: m.encodedImage,
+                        },
+                    },
+                ],
+            };
+        }),
     ];
 
     try {
