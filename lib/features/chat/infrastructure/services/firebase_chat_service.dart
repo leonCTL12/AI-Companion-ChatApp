@@ -46,16 +46,7 @@ class FirebaseChatService {
   ) async {
     List<Map<String, dynamic>> result = [];
     for (var message in history) {
-      String? encodedImage;
-
-      if (message.imageUrl != null) {
-        final file = File(message.imageUrl!);
-
-        if (await file.exists()) {
-          final bytes = await file.readAsBytes();
-          encodedImage = "data:image/jpeg;base64,${base64Encode(bytes)}";
-        }
-      }
+      String? encodedImage = await _encodeImage(message.imageUrl);
 
       final content = (message.content.trim().isEmpty && encodedImage != null)
           ? _imagePrompt
@@ -69,5 +60,18 @@ class FirebaseChatService {
     }
 
     return result;
+  }
+
+  Future<String?> _encodeImage(String? imageUrl) async {
+    if (imageUrl == null) {
+      return null;
+    }
+    final file = File(imageUrl);
+
+    if (await file.exists()) {
+      final bytes = await file.readAsBytes();
+      return "data:image/jpeg;base64,${base64Encode(bytes)}";
+    }
+    return null;
   }
 }
