@@ -2,9 +2,11 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:llm_chatbot/features/chat/application/chat_provider.dart';
 import 'package:llm_chatbot/features/chat/presentation/widgets/input_field.dart';
 
 import '../../application/selected_image_provider.dart';
+import '../../domain/models/message.dart';
 
 class ImagePreviewPage extends ConsumerStatefulWidget {
   final String imagePath;
@@ -31,7 +33,12 @@ class _ImagePreviewPageState extends ConsumerState<ImagePreviewPage> {
   }
 
   void onSend() {
-    //TODO: implement send
+    final text = _captionController.text.trim();
+
+    ref
+        .read(chatProvider.notifier)
+        .addUserMessage(text, imageUrl: widget.imagePath);
+
     Navigator.of(context).pop();
   }
 

@@ -13,9 +13,10 @@ class ChatNotifier extends _$ChatNotifier {
     return [];
   }
 
-  Future<void> addUserMessage(String content) async {
+  Future<void> addUserMessage(String content, {String? imageUrl}) async {
     final previousMessages = state.value ?? [];
-    final newMessage = Message.user(content);
+
+    final newMessage = Message.user(content, imageUrl: imageUrl);
     final updatedListWithUser = [...previousMessages, newMessage];
 
     state = AsyncData(updatedListWithUser);

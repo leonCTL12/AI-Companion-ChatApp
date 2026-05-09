@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 
 import 'package:intl/intl.dart';
@@ -39,11 +41,20 @@ class BaseChatMessageBubble extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.end,
           mainAxisSize: MainAxisSize.min,
           children: [
-            Text(
-              message.content,
-              style: theme.textTheme.bodyLarge?.copyWith(color: textColor),
-            ),
-            const SizedBox(height: 4),
+            if (message.imageUrl != null) ...[
+              ClipRRect(
+                borderRadius: BorderRadius.circular(12),
+                child: Image.file(File(message.imageUrl!), fit: BoxFit.cover),
+              ),
+              const SizedBox(height: 8),
+            ],
+            if (message.content.isNotEmpty) ...[
+              Text(
+                message.content,
+                style: theme.textTheme.bodyLarge?.copyWith(color: textColor),
+              ),
+              const SizedBox(height: 4),
+            ],
             Text(
               DateFormat.jm().format(message.timestamp),
               style: theme.textTheme.labelSmall?.copyWith(
