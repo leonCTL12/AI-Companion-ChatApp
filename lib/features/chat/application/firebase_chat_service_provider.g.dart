@@ -55,4 +55,4 @@ final class FirebaseChatServiceProvider
 }
 
 String _$firebaseChatServiceHash() =>
-    r'ffb651bb06d146cbb966b4e5053ddb32da48da5a';
+    r'2b037155fca57466cda13a8b7d2c8938d58a1d44';

@@ -1,16 +1,15 @@
-import 'dart:convert';
-import 'dart:io';
-
 import 'package:cloud_functions/cloud_functions.dart';
-
+import 'package:llm_chatbot/features/chat/infrastructure/services/image_util_service.dart';
 import '../../domain/models/message.dart' as domain;
 
 class FirebaseChatService {
+  final ImageUtilService _imageUtilService;
   final _functions = FirebaseFunctions.instanceFor(region: 'asia-east2');
   static const String _imagePrompt =
       "Acknowledge this image as a friend would.";
 
-  FirebaseChatService() {
+  FirebaseChatService(ImageUtilService imageUtilService)
+    : _imageUtilService = imageUtilService {
     const bool useEmulator = bool.fromEnvironment(
       'USE_EMULATOR',
       defaultValue: false,
@@ -46,7 +45,9 @@ class FirebaseChatService {
   ) async {
     List<Map<String, dynamic>> result = [];
     for (var message in history) {
-      String? encodedImage = await _encodeImage(message.imageUrl);
+      String? encodedImage = await _imageUtilService.encodeImageToBase64(
+        message.imageUrl,
+      );
 
       final content = (message.content.trim().isEmpty && encodedImage != null)
           ? _imagePrompt
@@ -60,18 +61,5 @@ class FirebaseChatService {
     }
 
     return result;
-  }
-
-  Future<String?> _encodeImage(String? imageUrl) async {
-    if (imageUrl == null) {
-      return null;
-    }
-    final file = File(imageUrl);
-
-    if (await file.exists()) {
-      final bytes = await file.readAsBytes();
-      return "data:image/jpeg;base64,${base64Encode(bytes)}";
-    }
-    return null;
   }
 }
