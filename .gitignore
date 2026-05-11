@@ -68,6 +68,6 @@ lib/generated_plugin_registrant.dart
 
 .idea
 .env
-
+.refact
 
 firebase-debug.log
