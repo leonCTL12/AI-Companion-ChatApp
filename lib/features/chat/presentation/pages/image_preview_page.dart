@@ -37,7 +37,7 @@ class _ImagePreviewPageState extends ConsumerState<ImagePreviewPage> {
 
     ref
         .read(chatProvider.notifier)
-        .addUserMessage(text, imageUrl: widget.imagePath);
+        .addUserMessage(text, imagePath: widget.imagePath);
 
     Navigator.of(context).pop();
   }

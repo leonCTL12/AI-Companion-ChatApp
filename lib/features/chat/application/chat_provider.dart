@@ -1,3 +1,4 @@
+import 'package:llm_chatbot/features/chat/application/image_util_service_provider.dart';
 import 'package:llm_chatbot/features/chat/domain/models/message.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
@@ -13,10 +14,15 @@ class ChatNotifier extends _$ChatNotifier {
     return [];
   }
 
-  Future<void> addUserMessage(String content, {String? imageUrl}) async {
+  Future<void> addUserMessage(String content, {String? imagePath}) async {
+    final imageUtilService = ref.read(imageUtilServiceProvider);
+    if (imagePath != null) {
+      imagePath = await imageUtilService.moveImageToAppDir(imagePath);
+    }
+
     final previousMessages = state.value ?? [];
 
-    final newMessage = Message.user(content, imageUrl: imageUrl);
+    final newMessage = Message.user(content, imageUrl: imagePath);
     final updatedListWithUser = [...previousMessages, newMessage];
 
     state = AsyncData(updatedListWithUser);
