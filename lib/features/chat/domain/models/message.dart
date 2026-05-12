@@ -21,4 +21,22 @@ class Message {
 
   Message.ai(String content)
     : this._(content: content, fromUser: false, timestamp: DateTime.now());
+
+  Map<String, dynamic> toMap() {
+    return {
+      'content': content,
+      'fromUser': fromUser,
+      'imageUrl': imageUrl,
+      'timestamp': timestamp.toIso8601String(),
+    };
+  }
+
+  factory Message.fromMap(Map<String, dynamic> map) {
+    return Message._(
+      content: map['content'],
+      fromUser: map['fromUser'],
+      imageUrl: map['imageUrl'],
+      timestamp: DateTime.parse(map['timestamp']),
+    );
+  }
 }

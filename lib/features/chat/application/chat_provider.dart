@@ -1,4 +1,5 @@
 import 'package:llm_chatbot/features/chat/application/image_util_service_provider.dart';
+import 'package:llm_chatbot/features/chat/application/local_db_service_provider.dart';
 import 'package:llm_chatbot/features/chat/domain/models/message.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
@@ -10,12 +11,14 @@ part 'chat_provider.g.dart';
 class ChatNotifier extends _$ChatNotifier {
   @override
   Future<List<Message>> build() async {
-    //initial state
-    return [];
+    final localDb = ref.read(localDbServiceProvider);
+    return await localDb.getHistory();
   }
 
   Future<void> addUserMessage(String content, {String? imagePath}) async {
     final imageUtilService = ref.read(imageUtilServiceProvider);
+    final localDb = ref.read(localDbServiceProvider);
+
     if (imagePath != null) {
       imagePath = await imageUtilService.moveImageToAppDir(imagePath);
     }
@@ -23,6 +26,9 @@ class ChatNotifier extends _$ChatNotifier {
     final previousMessages = state.value ?? [];
 
     final newMessage = Message.user(content, imageUrl: imagePath);
+
+    await localDb.saveMessage(newMessage);
+
     final updatedListWithUser = [...previousMessages, newMessage];
 
     state = AsyncData(updatedListWithUser);
@@ -36,6 +42,8 @@ class ChatNotifier extends _$ChatNotifier {
       final response = await chatRepository.getChatResponse(
         updatedListWithUser,
       );
+
+      await localDb.saveMessage(response);
 
       state = AsyncData([...updatedListWithUser, response]);
     } catch (e, stack) {
