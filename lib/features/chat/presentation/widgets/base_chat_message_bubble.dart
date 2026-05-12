@@ -1,12 +1,14 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:intl/intl.dart';
+import 'package:llm_chatbot/features/chat/application/image_util_service_provider.dart';
 
 import '../../domain/models/message.dart';
 
-class BaseChatMessageBubble extends StatelessWidget {
+class BaseChatMessageBubble extends ConsumerWidget {
   final Message message;
   final Alignment alignment;
   final Color backgroundColor;
@@ -21,7 +23,7 @@ class BaseChatMessageBubble extends StatelessWidget {
   });
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final theme = Theme.of(context);
     final colorScheme = theme.colorScheme;
     return Align(
@@ -42,12 +44,31 @@ class BaseChatMessageBubble extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             if (message.imageUrl != null) ...[
-              ClipRRect(
-                borderRadius: BorderRadius.circular(12),
-                child: Image.file(File(message.imageUrl!), fit: BoxFit.cover),
+              FutureBuilder<String>(
+                future: ref
+                    .read(imageUtilServiceProvider)
+                    .getFullPath(message.imageUrl!),
+                builder: (context, snapshot) {
+                  if (snapshot.hasData) {
+                    return ClipRRect(
+                      borderRadius: BorderRadius.circular(12),
+                      child: Image.file(
+                        File(snapshot.data!),
+                        fit: BoxFit.cover,
+                        errorBuilder: (context, error, stackTrace) =>
+                            const Icon(Icons.broken_image),
+                      ),
+                    );
+                  }
+                  return const SizedBox(
+                    height: 200,
+                    child: Center(child: CircularProgressIndicator.adaptive()),
+                  );
+                },
               ),
               const SizedBox(height: 8),
             ],
+
             if (message.content.isNotEmpty) ...[
               Text(
                 message.content,

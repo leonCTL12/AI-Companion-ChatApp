@@ -6,6 +6,8 @@ import 'package:path_provider/path_provider.dart';
 import 'package:path/path.dart' as p;
 
 class ImageUtilService {
+  static const String folderName = 'media';
+
   Future<String?> encodeImageToBase64(String? imagePath) async {
     if (imagePath == null) {
       return null;
@@ -27,7 +29,7 @@ class ImageUtilService {
     final fileName = '$hash$fileExtension';
 
     final appDir = await getApplicationDocumentsDirectory();
-    final mediaDir = Directory('${appDir.path}/media');
+    final mediaDir = Directory('${appDir.path}/$folderName');
 
     if (!await mediaDir.exists()) {
       await mediaDir.create(recursive: true);
@@ -43,7 +45,7 @@ class ImageUtilService {
     final File tempFile = File(imagePath);
 
     await tempFile.copy(permanentPath);
-    return permanentPath;
+    return fileName;
   }
 
   Future<String> _hashImage(String imagePath) async {
@@ -52,5 +54,11 @@ class ImageUtilService {
 
     final String hash = md5.convert(bytes).toString();
     return hash;
+  }
+
+  Future<String> getFullPath(String fileName) async {
+    final Directory appDir = await getApplicationDocumentsDirectory();
+    final fullPath = p.join(appDir.path, 'media', fileName);
+    return fullPath;
   }
 }

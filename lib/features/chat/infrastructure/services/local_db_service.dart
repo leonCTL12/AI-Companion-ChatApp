@@ -18,6 +18,7 @@ class LocalDbService {
   Future<Database> _initDb() async {
     final dir = await getApplicationDocumentsDirectory();
     final dbPath = p.join(dir.path, 'diary_database.db');
+    print('db path is $dbPath');
     return await databaseFactoryIo.openDatabase(dbPath);
   }
 
