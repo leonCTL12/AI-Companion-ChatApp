@@ -26,8 +26,16 @@ class InputField extends StatelessWidget {
             Expanded(
               child: TextField(
                 controller: controller,
+                minLines: 1,
+                maxLines: 5,
+                keyboardType: TextInputType.multiline,
+                textInputAction: TextInputAction.newline,
                 decoration: InputDecoration(
                   hintText: hintText,
+                  contentPadding: const EdgeInsets.symmetric(
+                    horizontal: 8,
+                    vertical: 5,
+                  ),
                   border: InputBorder.none,
                 ),
               ),
