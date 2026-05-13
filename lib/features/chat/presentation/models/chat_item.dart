@@ -14,3 +14,11 @@ class MessageItem extends ChatDisplayItem {
 
   MessageItem(this.message);
 }
+
+class LoadingItem extends ChatDisplayItem {}
+
+class ErrorItem extends ChatDisplayItem {
+  final String message;
+
+  ErrorItem(this.message);
+}

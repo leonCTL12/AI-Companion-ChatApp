@@ -7,24 +7,26 @@ part 'chat_display_item_provider.g.dart';
 @riverpod
 List<ChatDisplayItem> chatDisplayItems(Ref ref) {
   final messagesAsync = ref.watch(chatProvider);
+  final messages = messagesAsync.value;
 
-  return messagesAsync.maybeWhen(
-    data: (messages) {
-      if (messages.isEmpty) return [];
+  if (messages == null || messages!.isEmpty) return [];
 
-      final List<ChatDisplayItem> displayItems = [];
-      for (int i = 0; i < messages.length; i++) {
-        final currentMsg = messages[i];
-        if (i == 0 ||
-            !_isSameDay(currentMsg.timestamp, messages[i - 1].timestamp)) {
-          displayItems.add(DateHeaderItem(currentMsg.timestamp));
-        }
-        displayItems.add(MessageItem(currentMsg));
-      }
-      return displayItems;
-    },
-    orElse: () => [],
-  );
+  final List<ChatDisplayItem> displayItems = [];
+  for (int i = 0; i < messages.length; i++) {
+    final currentMsg = messages[i];
+    if (i == 0 ||
+        !_isSameDay(currentMsg.timestamp, messages[i - 1].timestamp)) {
+      displayItems.add(DateHeaderItem(currentMsg.timestamp));
+    }
+    displayItems.add(MessageItem(currentMsg));
+  }
+
+  if (messagesAsync is AsyncLoading && messagesAsync.hasValue) {
+    displayItems.add(LoadingItem());
+  } else if (messagesAsync is AsyncError) {
+    displayItems.add(ErrorItem("Connection lost, please try again"));
+  }
+  return displayItems;
 }
 
 bool _isSameDay(DateTime d1, DateTime d2) {
