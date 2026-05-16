@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:llm_chatbot/features/auth/presentation/widgets/sign_in_modal.dart';
 
 class ChatAppBar extends StatelessWidget implements PreferredSizeWidget {
   const ChatAppBar({super.key});
@@ -17,9 +18,7 @@ class ChatAppBar extends StatelessWidget implements PreferredSizeWidget {
       ),
       actions: [
         TextButton(
-          onPressed: () {
-            //TODO: Implement the logic for Sign in
-          },
+          onPressed: () => _showSignInModal(context),
           child: Text('Sign in'),
         ),
       ],
@@ -28,4 +27,11 @@ class ChatAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Size get preferredSize => const Size.fromHeight(kToolbarHeight); //default height of material app bar
+  void _showSignInModal(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (context) => const SignInModal(),
+      barrierDismissible: false,
+    );
+  }
 }
