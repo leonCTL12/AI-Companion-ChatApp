@@ -69,5 +69,5 @@ lib/generated_plugin_registrant.dart
 .idea
 .env
 .refact
-
+.DS_Store
 firebase-debug.log
