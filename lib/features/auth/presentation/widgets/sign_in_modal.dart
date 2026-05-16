@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:llm_chatbot/features/auth/application/auth_repository_provider.dart';
 
-class SignInModal extends StatelessWidget {
+class SignInModal extends ConsumerWidget {
   const SignInModal({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Dialog(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
       child: ConstrainedBox(
@@ -43,9 +45,12 @@ class SignInModal extends StatelessWidget {
                 width: double.infinity,
                 height: 48,
                 child: OutlinedButton.icon(
-                  onPressed: () {
-                    //TODO: call auth repo
-                    Navigator.of(context).pop();
+                  onPressed: () async {
+                    final authRepository = ref.read(authRepositoryProvider);
+                    await authRepository.signInWithGoogle();
+                    if (context.mounted) {
+                      Navigator.of(context).pop();
+                    }
                   },
                   label: const Text('Sign in with Google'),
                   icon: Icon(Icons.login),
