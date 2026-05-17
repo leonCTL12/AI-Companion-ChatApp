@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:llm_chatbot/features/auth/application/auth_state_provider.dart';
 import 'package:llm_chatbot/features/chat/presentation/widgets/sign_in_button.dart';
+import 'package:llm_chatbot/features/chat/presentation/widgets/sign_out_button.dart';
 
-class ChatAppBar extends StatelessWidget implements PreferredSizeWidget {
+class ChatAppBar extends ConsumerWidget implements PreferredSizeWidget {
   const ChatAppBar({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final authStateAsync = ref.watch(authStateProvider);
+    final authUser = authStateAsync.value;
     return AppBar(
       automaticallyImplyLeading: false,
       leading: IconButton(
@@ -15,7 +20,9 @@ class ChatAppBar extends StatelessWidget implements PreferredSizeWidget {
           //TODO: Implement the logic for ChatHistory
         },
       ),
-      actions: [SignInButton()],
+      actions: [
+        if (authUser == null) const SignInButton() else const SignOutButton(),
+      ],
     );
   }
 
