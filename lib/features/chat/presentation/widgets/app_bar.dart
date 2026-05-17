@@ -14,10 +14,9 @@ class ChatAppBar extends ConsumerWidget implements PreferredSizeWidget {
     return AppBar(
       automaticallyImplyLeading: false,
       leading: IconButton(
-        icon: const Icon(Icons.history),
-        tooltip: 'ChatHistory',
+        icon: const Icon(Icons.menu),
         onPressed: () {
-          //TODO: Implement the logic for ChatHistory
+          Scaffold.of(context).openDrawer();
         },
       ),
       actions: [
