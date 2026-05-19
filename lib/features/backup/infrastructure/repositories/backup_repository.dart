@@ -28,7 +28,7 @@ class BackupRepository {
 
       await _cloudStorageService.uploadBackup(
         userId: userId,
-        encryptedPayload: payload,
+        payload: payload,
       );
     } catch (e) {
       rethrow;

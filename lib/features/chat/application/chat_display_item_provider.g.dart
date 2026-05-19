@@ -54,4 +54,4 @@ final class ChatDisplayItemsProvider
   }
 }
 
-String _$chatDisplayItemsHash() => r'b8c1ab0f425fc36e4a17740ce18ccc1aeed73074';
+String _$chatDisplayItemsHash() => r'7dd200746e864f96636ac61c9650598f85028455';

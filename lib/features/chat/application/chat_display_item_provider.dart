@@ -9,7 +9,7 @@ List<ChatDisplayItem> chatDisplayItems(Ref ref) {
   final messagesAsync = ref.watch(chatProvider);
   final messages = messagesAsync.value;
 
-  if (messages == null || messages!.isEmpty) return [];
+  if (messages == null || messages.isEmpty) return [];
 
   final List<ChatDisplayItem> displayItems = [];
   for (int i = 0; i < messages.length; i++) {

@@ -14,7 +14,7 @@ class BackupButton extends ConsumerWidget {
     if (authUser == null) return const SizedBox.shrink(); //just for safety
 
     return Padding(
-      padding: const EdgeInsets.all(16.0),
+      padding: const EdgeInsets.all(8.0),
       child: SizedBox(
         width: double.infinity,
         height: 48,

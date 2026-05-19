@@ -6,7 +6,6 @@ import 'package:llm_chatbot/features/chat/application/chat_provider.dart';
 import 'package:llm_chatbot/features/chat/presentation/widgets/input_field.dart';
 
 import '../../application/selected_image_provider.dart';
-import '../../domain/models/message.dart';
 
 class ImagePreviewPage extends ConsumerStatefulWidget {
   final String imagePath;

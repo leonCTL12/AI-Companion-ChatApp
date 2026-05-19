@@ -8,12 +8,12 @@ class CloudStorageService {
 
   Future<void> uploadBackup({
     required String userId,
-    required Map<String, dynamic> encryptedPayload,
+    required Map<String, dynamic> payload,
   }) async {
     try {
       await _firestore.collection(collectionName).doc(userId).set({
         updatedAtField: FieldValue.serverTimestamp(),
-        dataField: encryptedPayload,
+        dataField: payload,
       });
     } catch (e) {
       throw Exception('Failed to push backup to Firestore: $e');
@@ -23,7 +23,13 @@ class CloudStorageService {
   Future<Map<String, dynamic>?> downloadBackup(String userId) async {
     try {
       final doc = await _firestore.collection(collectionName).doc(userId).get();
-      return doc.data();
+
+      final documentData = doc.data();
+      if (documentData == null) {
+        return null;
+      }
+
+      return documentData[dataField] as Map<String, dynamic>?;
     } catch (e) {
       throw Exception('Failed to retrieve backup from firestore: $e');
     }
