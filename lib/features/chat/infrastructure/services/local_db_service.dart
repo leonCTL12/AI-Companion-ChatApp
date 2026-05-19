@@ -36,4 +36,18 @@ class LocalDbService {
       return Message.fromMap(snapshot.value);
     }).toList();
   }
+
+  Future<void> replaceHistory(List<Message> history) async {
+    final db = await _db;
+
+    //Transaction: if the writing fails, the old data is not lost, it is one atomic action
+    await db.transaction((transaction) async {
+      await _store.delete(transaction);
+
+      if (history.isNotEmpty) {
+        final records = history.map((m) => m.toMap()).toList();
+        await _store.addAll(transaction, records);
+      }
+    });
+  }
 }

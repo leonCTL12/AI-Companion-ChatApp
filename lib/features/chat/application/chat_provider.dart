@@ -50,4 +50,15 @@ class ChatNotifier extends _$ChatNotifier {
       state = AsyncError<List<Message>>(e, stack);
     }
   }
+
+  Future<void> reloadFromLocalDb() async {
+    state = const AsyncLoading<List<Message>>();
+    try {
+      final localDb = ref.read(localDbServiceProvider);
+      final history = await localDb.getHistory();
+      state = AsyncData(history);
+    } catch (e, stack) {
+      state = AsyncError<List<Message>>(e, stack);
+    }
+  }
 }
