@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:llm_chatbot/features/auth/application/auth_state_provider.dart';
+import 'package:llm_chatbot/features/backup/presentations/widgets/backup_button.dart';
 
 class ChatPageDrawer extends ConsumerWidget {
   const ChatPageDrawer({super.key});
@@ -28,24 +29,7 @@ class ChatPageDrawer extends ConsumerWidget {
             const Expanded(
               child: Center(child: Text('History items placeholder')),
             ),
-            if (authUser != null) ...[
-              const Divider(),
-
-              Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: SizedBox(
-                  width: double.infinity,
-                  height: 48,
-                  child: FilledButton.icon(
-                    onPressed: () {
-                      //TODO: back up logic
-                    },
-                    label: const Text('Back up'),
-                    icon: const Icon(Icons.backup),
-                  ),
-                ),
-              ),
-            ],
+            if (authUser != null) ...[const Divider(), BackupButton()],
           ],
         ),
       ),
