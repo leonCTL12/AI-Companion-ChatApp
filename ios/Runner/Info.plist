@@ -2,8 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-    <key>GADApplicationID</key>
-    <string>ca-app-pub-3940256099942544~1458002511</string>
+	<key>GADApplicationIdentifier</key>
+	<string>ca-app-pub-3940256099942544~1458002511</string>
 	<key>CADisableMinimumFrameDurationOnPhone</key>
 	<true/>
 	<key>CFBundleDevelopmentRegion</key>
@@ -27,9 +27,9 @@
 	<key>CFBundleVersion</key>
 	<string>$(FLUTTER_BUILD_NUMBER)</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-    <string>This app needs access to your photos so you can share them in chat.</string>
-    <key>NSCameraUsageDescription</key>
-    <string>This app needs access to your camera so you can take and share photos directly in the chat.</string>
+	<string>This app needs access to your photos so you can share them in chat.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>This app needs access to your camera so you can take and share photos directly in the chat.</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UIApplicationSceneManifest</key>
@@ -73,15 +73,15 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>CFBundleURLTypes</key>
-    <array>
-    	<dict>
-    		<key>CFBundleTypeRole</key>
-    		<string>Editor</string>
-    		<key>CFBundleURLSchemes</key>
-    		<array>
-    			<string>com.googleusercontent.apps.771806524801-ruqvcbjhteb4bq545du8l3liea881o30</string>
-    		</array>
-    	</dict>
-    </array>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.771806524801-ruqvcbjhteb4bq545du8l3liea881o30</string>
+			</array>
+		</dict>
+	</array>
 </dict>
 </plist>
