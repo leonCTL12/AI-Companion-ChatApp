@@ -25,8 +25,8 @@
           "locale" : "en_US"
         }
       ],
-      "productID" : "premium_theme",
-      "referenceName" : "Premium Theme",
+      "productID" : "chat_token_2",
+      "referenceName" : "Chat Token Package",
       "type" : "Consumable"
     }
   ],

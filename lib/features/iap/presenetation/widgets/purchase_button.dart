@@ -14,7 +14,7 @@ class PurchaseButton extends ConsumerWidget {
         height: 48,
         child: OutlinedButton.icon(
           onPressed: () async {
-            await ref.read(purchaseServiceProvider).purchasePremiumTheme();
+            await ref.read(purchaseServiceProvider).purchaseTokenPack();
           },
           style: OutlinedButton.styleFrom(
             side: BorderSide(

@@ -7,7 +7,12 @@ class PurchaseService {
   final InAppPurchase _iap = InAppPurchase.instance;
   late StreamSubscription<List<PurchaseDetails>> _subscription;
 
-  static const String premiumThemeId = 'premium_theme';
+  final StreamController<int> _tokenPurchaseController =
+      StreamController<int>.broadcast();
+
+  Stream<int> get onTokensPurchased => _tokenPurchaseController.stream;
+
+  static const String tokenPackId = 'chat_token_2';
 
   void initialze() {
     final Stream<List<PurchaseDetails>> purchaseUpdated = _iap.purchaseStream;
@@ -37,6 +42,10 @@ class PurchaseService {
         debugPrint('🎉 SUCCESS! Item successfully processed.');
         debugPrint('🆔 Product ID: ${purchase.productID}');
         debugPrint('🔑 Transaction ID: ${purchase.transactionDate}');
+
+        if (purchase.productID == tokenPackId) {
+          _tokenPurchaseController.add(2);
+        }
       }
 
       //Close the transaction
@@ -46,22 +55,20 @@ class PurchaseService {
     }
   }
 
-  Future<void> purchasePremiumTheme() async {
+  Future<void> purchaseTokenPack() async {
     final bool isStoreAvailable = await _iap.isAvailable();
 
     if (!isStoreAvailable) {
       throw Exception('In App Purchasing is unavailable on this device');
     }
-    debugPrint('🔍 Querying product details for ID: $premiumThemeId...');
+    debugPrint('🔍 Querying product details for ID: $tokenPackId...');
 
     final ProductDetailsResponse response = await _iap.queryProductDetails({
-      premiumThemeId,
+      tokenPackId,
     });
 
-    if (response.notFoundIDs.contains(premiumThemeId)) {
-      throw Exception(
-        '❌ Product ID "$premiumThemeId" not found by store engine.',
-      );
+    if (response.notFoundIDs.contains(tokenPackId)) {
+      throw Exception('❌ Product ID "$tokenPackId" not found by store engine.');
     }
 
     if (response.productDetails.isNotEmpty) {
@@ -70,7 +77,7 @@ class PurchaseService {
         productDetails: product,
       );
 
-      await _iap.buyNonConsumable(purchaseParam: purchaseParam);
+      await _iap.buyConsumable(purchaseParam: purchaseParam);
     } else {
       throw Exception('❌ Product details array returned empty.');
     }
@@ -78,5 +85,6 @@ class PurchaseService {
 
   void dispose() {
     _subscription.cancel();
+    _tokenPurchaseController.close();
   }
 }
