@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:llm_chatbot/features/auth/application/auth_state_provider.dart';
+import 'package:llm_chatbot/features/auth/application/is_permanent_user_provider.dart';
 import 'package:llm_chatbot/features/backup/application/backup_repository_provider.dart';
 import 'package:llm_chatbot/features/chat/application/chat_provider.dart';
 
@@ -9,10 +10,9 @@ class RestoreButton extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final authStateAsync = ref.watch(authStateProvider);
+    final isPermanentUser = ref.watch(isPermanentUserProvider);
 
-    final authUser = authStateAsync.value;
-    if (authUser == null) return const SizedBox.shrink(); //just for safety
+    if (!isPermanentUser) return const SizedBox.shrink(); //just for safety
 
     return Padding(
       padding: const EdgeInsets.all(8.0),
@@ -21,6 +21,7 @@ class RestoreButton extends ConsumerWidget {
         height: 48,
         child: OutlinedButton.icon(
           onPressed: () async {
+            if (!isPermanentUser) return;
             final confirmed = await _showWarningDialog(context);
 
             if (!confirmed) return;

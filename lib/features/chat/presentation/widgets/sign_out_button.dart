@@ -8,8 +8,16 @@ class SignOutButton extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return TextButton(
-      onPressed: () {
-        ref.read(authRepositoryProvider).signOut();
+      onPressed: () async {
+        try {
+          final authRepo = ref.read(authRepositoryProvider);
+
+          await authRepo.signOut();
+
+          await authRepo.signInAnonymously();
+        } catch (e) {
+          debugPrint('❌ Error during sign out cycle: $e');
+        }
       },
       child: Text('Sign out'),
     );
