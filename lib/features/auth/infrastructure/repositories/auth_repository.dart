@@ -41,11 +41,12 @@ class AuthRepository {
   }
 
   Future<UserCredential?> signInWithGoogle() async {
+    AuthCredential? credential;
     try {
       final tokens = await _googleService.getTokens();
       if (tokens == null) return null;
 
-      final credential = GoogleAuthProvider.credential(
+      credential = GoogleAuthProvider.credential(
         idToken: tokens.idToken,
         accessToken: tokens.accessToken,
       );
@@ -78,16 +79,9 @@ class AuthRepository {
             debugPrint('⚠️ Failed to clean up anonymous user: $e');
           }
         }
-
-        //This is an edge case when a user already has a google account but still created an anonymous account and then signin
-        final altTokens = await _googleService.getTokens();
-        if (altTokens == null) return null;
-
-        final altCredential = GoogleAuthProvider.credential(
-          idToken: altTokens.idToken,
-          accessToken: altTokens.accessToken,
-        );
-        return await _auth.signInWithCredential(altCredential);
+        if (credential != null) {
+          return await _auth.signInWithCredential(credential);
+        }
       }
       rethrow;
     } catch (e) {
