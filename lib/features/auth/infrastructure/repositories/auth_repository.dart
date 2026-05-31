@@ -43,12 +43,13 @@ class AuthRepository {
   Future<UserCredential?> signInWithGoogle() async {
     AuthCredential? credential;
     try {
-      final tokens = await _googleService.getTokens();
-      if (tokens == null) return null;
+      final idToken = await _googleService.getIdToken();
+      if (idToken == null) return null;
 
+      //We do not need access to user's email etc, we just need to link it to its account
       credential = GoogleAuthProvider.credential(
-        idToken: tokens.idToken,
-        accessToken: tokens.accessToken,
+        idToken: idToken,
+        accessToken: null,
       );
 
       final user = _auth.currentUser;

@@ -11,19 +11,12 @@ class GoogleSignInService {
     }
   }
 
-  Future<({String? idToken, String? accessToken})?> getTokens() async {
+  Future<String?> getIdToken() async {
     try {
       await _ensureInitialized();
       final googleUser = await _googleSignIn.authenticate();
 
-      final clientAuth = await googleUser.authorizationClient.authorizeScopes([
-        'email',
-        'profile',
-      ]);
-      return (
-        idToken: googleUser.authentication.idToken,
-        accessToken: clientAuth.accessToken,
-      );
+      return googleUser.authentication.idToken;
     } on GoogleSignInException catch (e) {
       // Return null if user cancels (standard UX pattern)
       print('Google Auth Error: ${e.code}');
