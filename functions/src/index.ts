@@ -140,7 +140,6 @@ export const onUserCreatedFunction = functions.auth.user().onCreate(async (user)
     const isAnonymous = user.providerData ? user.providerData.length === 0 : true;
 
     const newUserProfile = {
-        uid: user.uid,
         is_anonymous: isAnonymous,
         token: isAnonymous ? 5 : 10,
         last_active_date: today,
