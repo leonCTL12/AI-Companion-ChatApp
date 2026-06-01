@@ -133,6 +133,8 @@ export const getChatResponse = onCall({secrets: ["OPENROUTER_API_KEY"]}, async (
     }
 });
 
+
+const userCollection = 'users';
 export const onUserCreatedFunction = functions.auth.user().onCreate(async (user) => {
     const today = new Date().toISOString().split('T')[0];
     const isAnonymous = user.providerData ? user.providerData.length === 0 : true;
@@ -145,9 +147,19 @@ export const onUserCreatedFunction = functions.auth.user().onCreate(async (user)
     };
 
     try {
-        await admin.firestore().collection('users').doc(user.uid).set(newUserProfile);
+        await admin.firestore().collection(userCollection).doc(user.uid).set(newUserProfile);
         console.log(`✅ Successfully initialized user profile for UID: ${user.uid}`);
     } catch (error) {
         console.error(`❌ Failed to create user profile for UID: ${user.uid}`, error);
+    }
+});
+
+
+export const onUserDeleted = functions.auth.user().onDelete(async (user) => {
+    try {
+        await admin.firestore().collection(userCollection).doc(user.uid).delete();
+        console.log(`🗑️ Successfully deleted user profile for UID: ${user.uid}`);
+    } catch (error) {
+        console.error(`❌ Failed to delete user profile for UID: ${user.uid}`, error);
     }
 });
