@@ -10,6 +10,8 @@
 import {setGlobalOptions} from "firebase-functions/v2";
 import {HttpsError, onCall} from "firebase-functions/v2/https";
 import axios from "axios";
+import * as admin from 'firebase-admin';
+import * as functions from 'firebase-functions/v1';
 
 // Start writing functions
 // https://firebase.google.com/docs/functions/typescript
@@ -30,6 +32,9 @@ setGlobalOptions({
     maxInstances: 10,
 });
 
+if (!admin.apps.length) {
+    admin.initializeApp();
+}
 const SYSTEM_PROMPT = `
 ### ROLE
 You are 'Echo', a warm, grounded, and empathetic emotional companion. 
@@ -125,5 +130,24 @@ export const getChatResponse = onCall({secrets: ["OPENROUTER_API_KEY"]}, async (
             "internal",
             error.response?.data?.error?.message || "Communication failed"
         );
+    }
+});
+
+export const onUserCreatedFunction = functions.auth.user().onCreate(async (user) => {
+    const today = new Date().toISOString().split('T')[0];
+    const isAnonymous = user.providerData ? user.providerData.length === 0 : true;
+
+    const newUserProfile = {
+        uid: user.uid,
+        is_anonymous: isAnonymous,
+        token: isAnonymous ? 5 : 10,
+        last_active_date: today,
+    };
+
+    try {
+        await admin.firestore().collection('users').doc(user.uid).set(newUserProfile);
+        console.log(`✅ Successfully initialized user profile for UID: ${user.uid}`);
+    } catch (error) {
+        console.error(`❌ Failed to create user profile for UID: ${user.uid}`, error);
     }
 });
