@@ -56,6 +56,7 @@ class PurchaseService {
 
       //Close the transaction
       if (purchase.pendingCompletePurchase) {
+        //Known bug: in_app_purchase_storekit plugin cannot complete transaction in a mock environment (simulator)
         debugPrint('🧹 Telling StoreKit to clear transaction from queue...');
         await _iap.completePurchase(purchase);
         debugPrint('✅ StoreKit queue successfully cleared!');
