@@ -24,7 +24,9 @@ class PurchaseService {
     debugPrint('🚀 Purchase Service Initialized & Listening...');
   }
 
-  void _handlePurchaseUpdates(List<PurchaseDetails> purchaseDetailsList) {
+  Future<void> _handlePurchaseUpdates(
+    List<PurchaseDetails> purchaseDetailsList,
+  ) async {
     for (var purchase in purchaseDetailsList) {
       debugPrint('📦 Processing purchase status: ${purchase.status}');
 
@@ -48,9 +50,19 @@ class PurchaseService {
         }
       }
 
+      debugPrint(
+        '❓ Does this transaction need completion? Value: ${purchase.pendingCompletePurchase}',
+      );
+
       //Close the transaction
       if (purchase.pendingCompletePurchase) {
-        _iap.completePurchase(purchase);
+        debugPrint('🧹 Telling StoreKit to clear transaction from queue...');
+        await _iap.completePurchase(purchase);
+        debugPrint('✅ StoreKit queue successfully cleared!');
+      } else {
+        debugPrint(
+          '⚠️ Warning: pendingCompletePurchase was FALSE. Transaction was NOT cleared.',
+        );
       }
     }
   }

@@ -12,3 +12,4 @@ Stream<User?> authState(Ref ref) {
 
   return authRepo.authStateChanges();
 }
+

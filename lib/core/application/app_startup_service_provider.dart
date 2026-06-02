@@ -1,5 +1,6 @@
 import 'package:llm_chatbot/core/infrastructure/app_startup_service.dart';
 import 'package:llm_chatbot/features/auth/application/auth_repository_provider.dart';
+import 'package:llm_chatbot/features/iap/application/token_fulfillment_service_provider.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'app_startup_service_provider.g.dart';
@@ -10,7 +11,8 @@ AppStartupService appStartupService(Ref ref) {
   ref.keepAlive();
 
   final authRepository = ref.watch(authRepositoryProvider);
-  final service = AppStartupService(authRepository);
+  final tokenFulfillmentService = ref.watch(tokenFulfillmentServiceProvider);
+  final service = AppStartupService(authRepository, tokenFulfillmentService);
   service.initialize();
   return service;
 }

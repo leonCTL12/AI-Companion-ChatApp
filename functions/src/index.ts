@@ -162,3 +162,31 @@ export const onUserDeleted = functions.auth.user().onDelete(async (user) => {
         console.error(`❌ Failed to delete user profile for UID: ${user.uid}`, error);
     }
 });
+
+export const addTokensToUser = functions.https.onCall(async (data) => {
+    const uid = data.uid;
+    const tokensToAdd = data.token;
+
+    if (!uid || typeof tokensToAdd !== 'number' || tokensToAdd <= 0) {
+        throw new functions.https.HttpsError('invalid-argument', 'The function must be called with a valid "uid" (string) and a positive "token" (number).');
+    }
+
+    try {
+        const userRef = admin.firestore().collection(userCollection).doc(uid);
+
+        await userRef.update({token: admin.firestore.FieldValue.increment(tokensToAdd)});
+
+        console.log(`✅ Successfully added ${tokensToAdd} tokens to user UID: ${uid}`);
+
+        return {
+            success: true,
+            message: `Successfully credited ${tokensToAdd} tokens.`,
+        };
+    } catch (error) {
+        console.error(`❌ Failed to add tokens for user UID: ${uid}`, error);
+        throw new functions.https.HttpsError(
+            'internal',
+            `Failed to update token balance: ${(error as Error).message}`
+        );
+    }
+});
