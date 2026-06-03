@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:in_app_purchase/in_app_purchase.dart';
 
-class PurchaseService {
+class ProdPurchaseService {
   final InAppPurchase _iap = InAppPurchase.instance;
   late StreamSubscription<List<PurchaseDetails>> _subscription;
 

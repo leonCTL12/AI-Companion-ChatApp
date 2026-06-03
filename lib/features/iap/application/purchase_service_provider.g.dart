@@ -14,8 +14,12 @@ final purchaseServiceProvider = PurchaseServiceProvider._();
 
 final class PurchaseServiceProvider
     extends
-        $FunctionalProvider<PurchaseService, PurchaseService, PurchaseService>
-    with $Provider<PurchaseService> {
+        $FunctionalProvider<
+          ProdPurchaseService,
+          ProdPurchaseService,
+          ProdPurchaseService
+        >
+    with $Provider<ProdPurchaseService> {
   PurchaseServiceProvider._()
     : super(
         from: null,
@@ -32,21 +36,22 @@ final class PurchaseServiceProvider
 
   @$internal
   @override
-  $ProviderElement<PurchaseService> $createElement($ProviderPointer pointer) =>
-      $ProviderElement(pointer);
+  $ProviderElement<ProdPurchaseService> $createElement(
+    $ProviderPointer pointer,
+  ) => $ProviderElement(pointer);
 
   @override
-  PurchaseService create(Ref ref) {
+  ProdPurchaseService create(Ref ref) {
     return purchaseService(ref);
   }
 
   /// {@macro riverpod.override_with_value}
-  Override overrideWithValue(PurchaseService value) {
+  Override overrideWithValue(ProdPurchaseService value) {
     return $ProviderOverride(
       origin: this,
-      providerOverride: $SyncValueProvider<PurchaseService>(value),
+      providerOverride: $SyncValueProvider<ProdPurchaseService>(value),
     );
   }
 }
 
-String _$purchaseServiceHash() => r'cf541cc1a55d9923e7522869f33c9340383d2909';
+String _$purchaseServiceHash() => r'ae582dbab617aeec6c6f5b66dd3f224578c68a89';
