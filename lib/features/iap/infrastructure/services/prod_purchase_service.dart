@@ -2,18 +2,21 @@ import 'dart:async';
 
 import 'package:flutter/cupertino.dart';
 import 'package:in_app_purchase/in_app_purchase.dart';
+import 'package:llm_chatbot/features/iap/infrastructure/services/purchase_service.dart';
 
-class ProdPurchaseService {
+class ProdPurchaseService implements PurchaseService {
   final InAppPurchase _iap = InAppPurchase.instance;
   late StreamSubscription<List<PurchaseDetails>> _subscription;
 
   final StreamController<int> _tokenPurchaseController =
       StreamController<int>.broadcast();
 
+  @override
   Stream<int> get onTokensPurchased => _tokenPurchaseController.stream;
 
   static const String tokenPackId = 'chat_token_2';
 
+  @override
   void initialize() {
     final Stream<List<PurchaseDetails>> purchaseUpdated = _iap.purchaseStream;
     _subscription = purchaseUpdated.listen(
@@ -68,6 +71,7 @@ class ProdPurchaseService {
     }
   }
 
+  @override
   Future<void> purchaseTokenPack() async {
     final bool isStoreAvailable = await _iap.isAvailable();
 
@@ -96,6 +100,7 @@ class ProdPurchaseService {
     }
   }
 
+  @override
   void dispose() {
     _subscription.cancel();
     _tokenPurchaseController.close();
