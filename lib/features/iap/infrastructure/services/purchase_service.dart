@@ -14,7 +14,7 @@ class PurchaseService {
 
   static const String tokenPackId = 'chat_token_2';
 
-  void initialze() {
+  void initialize() {
     final Stream<List<PurchaseDetails>> purchaseUpdated = _iap.purchaseStream;
     _subscription = purchaseUpdated.listen(
       _handlePurchaseUpdates,

@@ -7,7 +7,7 @@ part 'purchase_service_provider.g.dart';
 PurchaseService purchaseService(Ref ref) {
   final service = PurchaseService();
 
-  service.initialze();
+  service.initialize();
 
   //force it to be a permanent global singleton, coz it keep listening to app store event, so it should not be lazy load.
   ref.keepAlive();
