@@ -64,11 +64,41 @@ export const getChatResponse = onCall({secrets: ["OPENROUTER_API_KEY"]}, async (
         console.log("✅ API Key loaded successfully (starts with: " + apiKey.substring(0, 7) + "...)");
     }
 
-    const history = request.data.history;
+    // 1 Authentication
+    const uid = request.auth?.uid;
+    if (!uid) {
+        throw new HttpsError("unauthenticated", "The function must be called by an authenticated user.");
+    }
 
+    // 2 Check input data format
+    const history = request.data.history;
     if (!Array.isArray(history)) {
         throw new HttpsError("invalid-argument", "The function must be called with a 'history' array.");
     }
+
+    // 3 deduct token
+    const userRef = admin.firestore().collection(userCollection).doc(uid);
+    try {
+        await admin.firestore().runTransaction(async (transaction) => {
+            const userDoc = await transaction.get(userRef);
+            if (!userDoc.exists) {
+                throw new HttpsError("not-found", "User profile does not exist in the database.");
+            }
+            const currentTokens = userDoc.data()?.token ?? 0;
+            console.log(`🪙 User ${uid} attempting chat. Current balance: ${currentTokens}`);
+            if (currentTokens < 1) {
+                throw new HttpsError("resource-exhausted", "Insufficient tokens. Please purchase more tokens to continue.");
+            }
+            transaction.update(userRef, {
+                token: admin.firestore.FieldValue.increment(-1),
+            });
+        });
+    } catch (dbError: any) {
+        if (dbError instanceof HttpsError) throw dbError;
+        console.error("❌ Token deduction database transaction failed:", dbError);
+        throw new HttpsError("internal", "Failed to process token balance transaction.");
+    }
+
 
     const messages = [
         {role: "system", content: SYSTEM_PROMPT},

@@ -34,6 +34,12 @@ class FirebaseChatService {
 
       return result.data['message'] as String;
     } on FirebaseFunctionsException catch (e) {
+      if (e.code == 'resource-exhausted') {
+        // Trigger a callback, navigate to shop, or return a unique flag
+        // so your UI can pop open the purchase token sheets!
+        return "OUT_OF_TOKENS";
+      }
+
       return "Firebase Error: [${e.code}] ${e.message}";
     } catch (e) {
       return "Unexpected Error: $e";
